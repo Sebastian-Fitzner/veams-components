@@ -53,7 +53,10 @@ module.exports = {
 		tasks: 'sass:universal'
 	},
 	templates: {
-		files: ['<%= paths.src %>/{data,templates/layouts,templates/partials}/**/{,*/}*.{md,hbs,yml,json}'],
+		files: [
+			'<%= paths.src %>/{data,templates/layouts,templates/partials}/**/{,*/}*.{md,hbs,yml,json}',
+			'{data,components,panels/**/*.{hbs,md,json}}'
+		],
 	    tasks: ['newer:assemble'],
 	    options: {
 			spawn: false

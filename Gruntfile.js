@@ -39,7 +39,7 @@ module.exports = function(grunt) {
 			// resources folder with working files
 			src: 'resources',
 			// dev/working folder
-			dev: '_output'
+			dev: 'demo'
 		},
 	// define your ports for grunt-contrib-connect
 		ports: {

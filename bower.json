@@ -1,14 +1,25 @@
 {
-    "version": "0.1.0",
-    "dependencies": {
-        "backbone": "~1.1.2",
-        "requirejs": "2.1.15",
-        "jquery": "~2.1.3",
-        "almond": "~0.3.0",
-        "requirejs-text": "~2.0.13",
-        "bourbon": "~3.1.8",
-        "neat": "~1.5.0",
-        "pg-scss": "~0.1.5"
-    },
-    "name": "pg-components"
+	"name": "pg-components",
+	"version": "0.1.0",
+	"ignore": [
+		"_dist",
+		"demo",
+		"helpers",
+		"resources/assets",
+		"resources/data",
+		"resources/js",
+		"resources/templates",
+		"resources/bower-components",
+		".bowerrc",
+		".gitignore",
+		"bower.json",
+		"Gruntfile.js",
+		"package.json",
+		"README.md"
+	],
+	"devDependencies": {
+		"bourbon": "~3.1.8",
+		"neat": "~1.5.0",
+		"pg-scss": "~0.1.5"
+	}
 }

@@ -1,0 +1,50 @@
+---
+component: picture
+---
+
+<picture class="c-picture{{#if picture-modifier-class}}--{{picture-modifier-class}}{{/if}} {{picture-classes}}" data-css="c-picture">
+
+	<!--[if IE 9]><audio><![endif]-->
+	{{#if picture-320}}
+		<source srcset="{{assets}}/{{picture-320}} 1x, {{assets}}/{{picture-320_2x}} 2x" media="(max-width: 320px)"/>
+	{{/if}}
+
+	{{#if picture-480}}
+		<source srcset="{{assets}}/{{picture-480}} 1x, {{assets}}/{{picture-480_2x}} 2x" media="(max-width: 480px)"/>
+	{{/if}}
+
+	{{#if picture-640}}
+		<source srcset="{{assets}}/{{picture-640}} 1x, {{assets}}/{{picture-640_2x}} 2x" media="(max-width: 640px)"/>
+	{{/if}}
+
+	{{#if picture-768}}
+		<source srcset="{{assets}}/{{picture-768}} 1x, {{assets}}/{{picture-768_2x}} 2x" media="(max-width: 768px)"/>
+	{{/if}}
+
+	{{#if picture-1024}}
+		<source srcset="{{assets}}/{{picture-1024}} 1x, {{assets}}/{{picture-1024_2x}} 2x" media="(max-width: 1024px)"/>
+	{{/if}}
+
+	{{#if picture-1025}}
+		<source srcset="{{assets}}/{{picture-1025}} 1x, {{assets}}/{{picture-1025_2x}} 2x" media="(min-width: 1024px)"/>
+	{{/if}}
+
+	{{#if picture-769}}
+		<source srcset="{{assets}}/{{picture-769}} 1x, {{assets}}/{{picture-769_2x}} 2x" media="(min-width: 769px)"/>
+	{{/if}}
+
+	{{#if picture-481}}
+		<source srcset="{{assets}}/{{picture-481}} 1x, {{assets}}/{{picture-481_2x}} 2x" media="(min-width: 481px)"/>
+	{{/if}}
+
+	{{#if picture-381}}
+		<source srcset="{{assets}}/{{picture-381}} 1x, {{assets}}/{{picture-381_2x}} 2x" media="(min-width: 380px)"/>
+	{{/if}}
+
+	{{#if picture-321}}
+		<source srcset="{{assets}}/{{picture-321}} 1x, {{assets}}/{{picture-321_2x}} 2x" media="(min-width: 321px)"/>
+	{{/if}}
+	<!--[if IE 9]></audio><![endif]-->
+
+	<img src="{{assets}}/{{picture-url-std}}" alt="{{picture-alt}}"/>
+</picture>

@@ -1,0 +1,12 @@
+<div class="figure__caption-inner">
+	{{#if figure-caption.caption-headline}}
+		<h3 class="figure__caption-headline">{{figure-caption.caption-headline}}</h3>
+	{{/if}}
+	{{#if figure-caption.caption-content}}
+		<p class="figure__caption-content">{{figure-caption.caption-content}}</p>
+	{{/if}}
+
+	{{#if cta}}
+		{{partial "c-cta" cta}}
+	{{/if}}
+</div>

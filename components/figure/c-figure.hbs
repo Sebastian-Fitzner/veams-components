@@ -1,0 +1,21 @@
+---
+component: figure
+---
+
+<figure {{#if figure-id}}id="{{figure-id}}" {{/if}}class="c-figure{{#if figure-modifier-class}}--{{figure-modifier-class}}{{/if}} {{figure-classes}}" data-css="c-figure">
+
+	<div class="figure__wrapper">
+		{{#if picture-url-std}}
+			{{partial "c-picture"}}
+		{{else}}{{#if video}}
+			{{partial "c-video"}}
+		{{/if}}{{/if}}
+	</div>
+
+	{{#if figure-caption}}
+		<figcaption class="figure__caption {{figure-caption-classes}}">
+			{{partial "c-figure__caption" }}
+		</figcaption>
+	{{/if}}
+
+</figure>

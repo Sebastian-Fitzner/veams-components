@@ -1,0 +1,22 @@
+{{#is wrapper true}}
+	<div class="form__col-left">
+{{/is}}
+	<strong>{{ label }}</strong>
+{{#is wrapper true}}
+	</div>
+	<div class="form__col-right">
+{{/is}}
+{{#each checkboxes}}
+		<div class="{{ class }}">
+		<input type="{{ ../type }}" id="{{ id }}" value="{{ check-value }}"
+		       {{#is required "required"}}required="required"{{/is}}
+			{{#each data-attribute}}
+				{{data-attribute}}="{{data-attribute-value}}"
+			{{/each}}/>
+			<label for="{{ id }}">{{{ label }}} {{#is required "required"}}<abbr title="Required">*</abbr>{{/is}}
+			</label>
+		</div>
+{{/each}}
+{{#is wrapper true}}
+	</div>
+{{/is}}

@@ -1,29 +1,26 @@
 /* ===================================================
-FIGURE COMPONENT
+TEASER COMPONENT
 =================================================== */
 
 /* ---------------------------------------------------
 Global Styles
 --------------------------------------------------- */
-[data-css="c-figure"] {
-	.figure__wrapper {
+[data-css="c-teaser"] {
+	.teaser__link {
 	}
-
-	.figure__caption {
+	.teaser__wrapper {
 	}
-
-	.figure__caption-inner {
+	.teaser__date {
 	}
-
-	.figure__caption-headline {
+	.teaser__headline {
 	}
-
-	.figure__caption-content {
+	.teaser__content {
+	}
+	.teaser__footer {
 	}
 }
 
 /* ---------------------------------------------------
 Modifier
 --------------------------------------------------- */
-.c-figure--modifier {
-}
+.c-teaser--modifier {}

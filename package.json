@@ -1,32 +1,29 @@
 {
-    "name": "pg-components",
-    "description": "Prototype",
-    "version": "0.1.0",
-    "author": {
-        "name": "Sebastian Fitzner",
-        "email": "",
-        "url": "http://github.com/sebastian-fitzner/"
-    },
-    "engines": {
-        "node": ">=0.8"
-    },
-    "scripts": {
-        "test": "grunt test"
-    },
-    "devDependencies": {
-		"grunt": "~0.4.5", 
-        "assemble": "~0.4.42",
-		"lodash" : "*",
+	"name": "pg-components",
+	"description": "Prototype",
+	"version": "0.2.0",
+	"author": {
+		"name": "Sebastian Fitzner",
+		"email": "",
+		"url": "http://github.com/sebastian-fitzner/"
+	},
+	"engines": {
+		"node": ">=0.8"
+	},
+	"scripts": {
+		"test": "grunt test"
+	},
+	"devDependencies": {
+		"grunt": "~0.4.5",
+		"assemble": "~0.4.42",
+		"lodash": "*",
 		"gray-matter": "*",
 		"handlebars-helper-autolink": "^0.1.1",
-        "grunt-sass": "^0.16.0",
-        "grunt-fileindex": "^0.1.0",
-        "grunt-newer": "~0.8.0",
-		
+		"grunt-sass": "^0.16.0",
+		"grunt-fileindex": "^0.1.0",
+		"grunt-newer": "~0.8.0",
 		"grunt-browser-sync": "~1.5.3",
-		
-        "grunt-version": "^0.3.0",
-		
+		"grunt-version": "^0.3.0",
 		"jit-grunt": "^0.9.0",
 		"load-grunt-configs": "~0.4.1",
 		"grunt-sync": "~0.2.0",
@@ -35,19 +32,19 @@
 		"grunt-concurrent": "~0.4.2",
 		"grunt-jsbeautifier": "~0.2.6",
 		"grunt-contrib-cssmin": "~0.10.0",
-        "grunt-contrib-clean": "~0.6.0",
-        "grunt-contrib-connect": "~0.8.0",
-        "grunt-contrib-watch": "~0.6.1",
+		"grunt-contrib-clean": "~0.6.0",
+		"grunt-contrib-connect": "~0.8.0",
+		"grunt-contrib-watch": "~0.6.1",
 		"grunt-contrib-jshint": "~0.8.0",
-        "time-grunt": "*"
-},
-"licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/sebastian-fitzner/pg-components/blob/master/LICENSE-MIT"
-    }
-  ] ,
-  "keywords": [
+		"time-grunt": "*"
+	},
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "https://github.com/sebastian-fitzner/pg-components/blob/master/LICENSE-MIT"
+		}
+	],
+	"keywords": [
 		"handlebars-helper-autolink"
 	]
 }

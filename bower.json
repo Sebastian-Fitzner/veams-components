@@ -1,11 +1,12 @@
 {
 	"name": "pg-components",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"ignore": [
 		"_dist",
 		"demo",
 		"helpers",
 		"resources/assets",
+		"resources/scss",
 		"resources/data",
 		"resources/js",
 		"resources/templates",

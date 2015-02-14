@@ -1,0 +1,16 @@
+---
+title: Components in Assemble - Figure
+menuLink: Figure Component
+sortOrder: 03
+---
+
+{{#extend "tpl-default"}}
+	{{#content "body"}}
+		{{#with figure.simple}}
+			{{> c-figure }}
+		{{/with}}
+		{{#with figure.caption}}
+			{{> c-figure }}
+		{{/with}}
+	{{/content}}
+{{/extend}}

@@ -10,25 +10,25 @@ component: form
 			<div class="form__col {{ col-classes }}">
 
 				{{#is typeOf "input"}}
-					{{partial "c-form__input" }}
+					{{> c-form__input }}
 
 				{{else}}{{#is typeOf "textarea"}}
-					{{partial "c-form__textarea" }}
+					{{> c-form__textarea }}
 
 				{{ else }}{{#is typeOf "select"}}
-					{{partial "c-form__select" }}
+					{{> c-form__select }}
 
 				{{ else }}{{#is typeOf "info"}}
-					{{partial "c-form__info" }}
+					{{> c-form__info }}
 
 				{{ else }}{{#is typeOf "radio"}}
-					{{partial "c-form__radio" ../this }}
+					{{> c-form__radio ../this }}
 
 				{{ else }}{{#is typeOf "checkbox"}}
-					{{partial "c-form__checkbox" ../this }}
+					{{> c-form__checkbox ../this }}
 
 				{{ else }}{{#is typeOf "submit"}}
-					{{partial "c-form__submit" }}
+					{{> c-form__submit }}
 
 				{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}
 			</div>

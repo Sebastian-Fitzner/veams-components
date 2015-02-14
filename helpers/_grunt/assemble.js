@@ -3,11 +3,13 @@ module.exports = {
 		assets: '<%= paths.dev %>',
 		data: [
 			'<%= paths.src %>/data/**/*.{json,yml}',
+			'components/**/*.{json,yml}',
+			'panels/**/*.{json,yml}',
 			'data/**/*.json'
 		],
 		helpers: '<%= paths.src %>/templates/helpers/**/*.js',
 		layoutdir: '<%= paths.src %>/templates/layouts/',
-		layout: false, 
+		layout: false,
 		partials: [
 			'components/**/*.hbs',
 			'panels/**/*.hbs',
@@ -19,8 +21,7 @@ module.exports = {
 		]
 	},
 	pages: {
-		options: {
-		},
+		options: {},
 		files: [{
 			cwd: '<%= paths.src %>/templates/pages/',
 			dest: '<%= paths.dev %>/',

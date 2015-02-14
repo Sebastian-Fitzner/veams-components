@@ -28,7 +28,7 @@ module.exports = {
 				cwd: '<%= paths.src %>/scss/',
 				// here you can build your styles.scss like you would do in styles.scss with sass-globbing
 				src: [
-					'../bower-components/pg-scss/resources/scss/_pg-reset.scss',
+					'../bower-components/pg-scss/resources/scss/_pg-normalize.scss',
 					'../bower-components/pg-scss/resources/scss/_pg.scss',
 					'../bower-components/bourbon/app/assets/stylesheets/_bourbon.scss',
 					'../bower-components/neat/app/assets/stylesheets/_neat.scss',

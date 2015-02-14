@@ -55,7 +55,7 @@ module.exports = {
 	templates: {
 		files: [
 			'<%= paths.src %>/{data,templates/layouts,templates/partials}/**/{,*/}*.{md,hbs,yml,json}',
-			'{data,components,panels/**/*.{hbs,md,json}}'
+			'{data,components,panels}/**/*.{hbs,md,json}'
 		],
 	    tasks: ['newer:assemble'],
 	    options: {

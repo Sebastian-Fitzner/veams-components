@@ -1,0 +1,32 @@
+---
+component: table
+---
+
+<div class="c-table{{#if tableModifierClass}}--{{tableModifierClass}}{{/if}} {{tableClasses}}" data-css="c-table">
+	<table class="table__content">
+		{{#if tableCaption}}
+			<caption class="table__caption">
+			{{ tableCaption}}
+			</caption>
+		{{/if}}
+        {{#if tableHeader}}
+			<thead class="table__head">
+			<tr class="table__row">
+                {{#each tableHeader.data}}
+					<th class="table__head-inner is-th">{{thContent}}</th>
+                {{/each}}
+			</tr>
+			</thead>
+        {{/if}}
+
+		<tbody class="table__body">
+        {{#each tableRow.data}}
+			<tr class="table__row {{trClass}}">
+                {{#each data}}
+					<{{#unless thTag}}td{{else}}th{{/unless}} class="table__data{{#unless thTag}} is-td{{else}} is-th{{/unless}} {{tdClass}}">{{tdContent}}</{{#unless thTag}}td{{else}}th{{/unless}}>
+                {{/each}}
+			</tr>
+        {{/each}}
+		</tbody>
+	</table>
+</div>

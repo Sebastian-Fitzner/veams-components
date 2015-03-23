@@ -1,0 +1,76 @@
+/* ===================================================
+TABLE COMPONENT
+=================================================== */
+
+/* ---------------------------------------------------
+Global Styles
+--------------------------------------------------- */
+
+[data-css="c-table"] {
+	overflow-x: auto;
+	overflow-y: hidden;
+	max-width: 100%;
+	background-color: transparent;
+
+	/*
+	Sub Elements
+	----------------------- */
+	.table__content {
+		margin-bottom: 0;
+		width: 100%;
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+
+	.table__caption {
+		caption-side: bottom;
+		text-align: left;
+	}
+
+	.table__head-inner {
+		padding: 15px;
+		font-weight: normal;
+		text-align: left;
+	}
+	.table__data {
+		padding: 15px 20px;
+		text-align: left;
+	}
+
+	/*
+	States
+	----------------------- */
+	.is-th {
+	}
+
+	.is-td {
+	}
+
+	.is-bold {
+	}
+}
+
+/* ---------------------------------------------------
+Zebra Table Modifier
+--------------------------------------------------- */
+.c-table--zebra {
+
+	/*
+	Sub Elements
+	----------------------- */
+	.table__row:nth-child(n+1) {
+		background-color: transparent;
+	}
+
+	.table__row:nth-child(2n+2) {
+		background-color: #F5F5F5;
+	}
+
+	/*
+	States
+	----------------------- */
+	.is-th {
+		background-color: #999999;
+		color: #FFFFFF;
+	}
+}

@@ -1,0 +1,12 @@
+---
+component: quote
+---
+
+<div class="c-quote{{#if quoteModifierClass}}--{{quoteModifierClass}}{{/if}} {{quoteClasses}}" data-css="c-quote">
+    <blockquote class="quote__content">
+        {{quoteContent}}
+    </blockquote>
+    {{#if quoteAuthor}}
+	    <cite class="quote__author">{{quoteAuthor}}</cite>
+    {{/if}}
+</div>

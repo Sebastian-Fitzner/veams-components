@@ -43,9 +43,3 @@ To see how it works, take a look at `resources/templates/pages/page-section.hbs`
 I created some markdown files to speed up the integration of dummy content. 
 
 Just choose the files you need from the `markdown` folder.
-
----------------------------------------------------
-### Frontend Methodology
-
-I build pg-components with the PG Frontend Methodology: 
-* http://www.prototype-generator.com/pg-methodology/pg-methodology-overview.html

@@ -1,37 +1,9 @@
----
+{{!
+--------------------------------------
 component: form
----
+--------------------------------------
+}}
 
-<fieldset class="form__fieldset{{#if fieldset-class}} {{fieldset-class}}{{/if}}">
-	<legend{{#if legend-classes}} class="{{ legend-classes }}"{{/if}}>{{ legend }}</legend>
-	<div class="form__row {{ row-classes }}">
-
-		{{#each data}}
-			<div class="form__col {{ col-classes }}">
-
-				{{#is typeOf "input"}}
-					{{> c-form__input }}
-
-				{{else}}{{#is typeOf "textarea"}}
-					{{> c-form__textarea }}
-
-				{{ else }}{{#is typeOf "select"}}
-					{{> c-form__select }}
-
-				{{ else }}{{#is typeOf "info"}}
-					{{> c-form__info }}
-
-				{{ else }}{{#is typeOf "radio"}}
-					{{> c-form__radio ../this }}
-
-				{{ else }}{{#is typeOf "checkbox"}}
-					{{> c-form__checkbox ../this }}
-
-				{{ else }}{{#is typeOf "submit"}}
-					{{> c-form__submit }}
-
-				{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}
-			</div>
-		{{/each}}
-	</div>
-</fieldset>
+<form class="c-form{{#if options.modifier}}--{{options.modifier}}{{/if}}{{#if classes}}{{classes}}{{/if}}" action="{{options.action}}" method="{{options.method}}" data-css="c-form" data-js-module="form">
+	{{{yield}}}
+</form>

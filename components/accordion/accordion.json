@@ -1,0 +1,74 @@
+{
+	"accordion": {
+		"accModifierClass": "default",
+		"accContext": "c-accordion",
+		"data": [
+			{
+				"accId": "1",
+				"accCta": {
+					"ctaTarget": "#",
+					"ctaModifierClass": "accordion",
+					"ctaContent": "Beispiel Text",
+					"ctaJsModule": true,
+					"ctaJsOptions": [
+						{
+							"ctaKey": "context",
+							"ctaValue": "[data-js-context=\\\"c-accordion\\\"]"
+						},
+						{
+							"ctaKey": "globalEvent",
+							"ctaValue": "toggle:toggleContent"
+						},
+						{
+							"ctaKey": "id",
+							"ctaValue": "acc-01"
+						},
+						{
+							"ctaKey": "singleOpen",
+							"ctaValue": "true"
+						}
+					]
+				},
+				"toggleId": "acc-01",
+				"toggleDataJsOptions": "{\"singleOpen\": \"true\"}",
+				"toggleMd": {
+					"rteModifierClass": "accordion",
+					"rteMd": "resources/templates/data/markdown/text.md"
+				}
+			},
+			{
+				"accId": "2",
+				"accCta": {
+					"ctaTarget": "#",
+					"ctaModifierClass": "accordion",
+					"ctaContent": "Beispiel Text",
+					"ctaJsModule": true,
+					"ctaJsOptions": [
+						{
+							"ctaKey": "context",
+							"ctaValue": "[data-js-context=\\\"c-accordion\\\"]"
+						},
+						{
+							"ctaKey": "globalEvent",
+							"ctaValue": "toggle:toggleContent"
+						},
+						{
+							"ctaKey": "id",
+							"ctaValue": "acc-02"
+						},
+						{
+							"ctaKey": "singleOpen",
+							"ctaValue": "true"
+						}
+					]
+				},
+				"toggleId": "acc-02",
+				"toggleDataJsOptions": "{\"singleOpen\": \"true\"}",
+				"toggleMd": {
+					"rteModifierClass": "accordion",
+					"rteMd": "resources/templates/data/markdown/text.md"
+				}
+			}
+		]
+	}
+}

@@ -1,5 +1,3 @@
-<fieldset class="form__submit">
-	<legend class="is-hidden">Submit-Button</legend>
-	<button type="submit" class="form__button">Senden</button>
-</fieldset>
-
+<button type="submit" class="form__submit{{#if submitClass}} {{submitClass}}{{/if}}">
+	<span>{{text}}</span>
+</button>

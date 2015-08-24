@@ -1,27 +1,19 @@
 <div class="form__input">
-	{{#is wrapper true}}
-		<div class="form__col-left is-middle">
-	{{/is}}
-	<label for="{{ id }}"{{#if label-class}} class="{{label-class}}"{{/if}}>
-		{{ label }} {{#or required validate-me}}<abbr title="Required">*</abbr>{{/or}}
-	</label>
-	{{#is wrapper true}}
-		</div>
-		<div class="form__col-right">
-	{{/is}}
-	<input id="{{ id }}" type="{{ type }}" placeholder="{{ placeholder }}"
-		{{#each data-attribute}}
-			{{data-attribute}}{{#if data-attribute-value}}="{{data-attribute-value}}"{{/if}}
-		{{/each}}
-		{{#is required "required"}}required="required"{{/is}}
-		{{#if pattern}}pattern="{{{ pattern }}}"{{/if}}
-		{{#if input-class}} class="{{input-class}}"{{/if}}/>
-	{{#is wrapper true}}
+	<div class="form__col-label">
+		<label for="{{ id }}"{{#if labelClass}} class="{{labelClass}}"{{/if}}>
+			{{label}}{{#if required}} <abbr title="Required">*</abbr>{{/if}}
+		</label>
 	</div>
-	{{/is}}
-	{{#if custom-errormessage}}
+	<div class="form__col-input">
+		<input id="{{id}}" type="{{type}}" placeholder="{{placeholder}}"
+		{{#each dataAttr}} {{attrKey}}="{{{attrValue}}}"{{/each}}
+		{{#if required}} required="required"{{/if}}
+		{{#if pattern}} pattern="{{{ pattern }}}"{{/if}}
+		{{#if inputClass}} class="{{inputClass}}"{{/if}}/>
+	</div>
+	{{#if errorMessage}}
 		<div class="form__error" hidden="">
-			<p>{{custom-errormessage}}</p>
+			<p>{{errorMessage}}</p>
 		</div>
 	{{/if}}
 </div>

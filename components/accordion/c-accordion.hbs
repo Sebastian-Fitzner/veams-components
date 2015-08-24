@@ -1,0 +1,10 @@
+{{!
+---
+component: accordion
+---
+}}
+
+<div class="c-accordion{{#if options.accModifierClass}}--{{options.accModifierClass}}{{else}}--{{accModifierClass}}{{/if}}{{#if options.accClasses}} {{options.accClasses}}{{/if}}{{#if accClasses}} {{accClasses}}{{/if}}"
+     data-css="c-accordion" data-js-context="{{#if options.accContext}}{{options.accClasses}}{{else}}{{accContext}}{{/if}}">
+	{{{yield}}}
+</div>

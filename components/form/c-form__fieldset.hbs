@@ -1,0 +1,37 @@
+---
+component: fieldset
+---
+
+<fieldset class="form__fieldset{{#if fieldsetClass}} {{fieldsetClass}}{{/if}}">
+	<legend{{#if legendClasses}} class="{{ legendClasses }}"{{/if}}>{{ legend }}</legend>
+	<div class="form__row {{ row-classes }}">
+
+		{{#each data}}
+			<div class="form__col {{ colClasses }}">
+
+				{{#is typeOf "input"}}
+					{{> c-form__input }}
+
+				{{else}}{{#is typeOf "textarea"}}
+					{{> c-form__textarea }}
+
+				{{ else }}{{#is typeOf "select"}}
+					{{> c-form__select }}
+
+				{{ else }}{{#is typeOf "info"}}
+					{{> c-form__info }}
+
+				{{ else }}{{#is typeOf "radio"}}
+					{{> c-form__radio ../this }}
+
+				{{ else }}{{#is typeOf "checkbox"}}
+					{{> c-form__checkbox ../this }}
+
+				{{ else }}{{#is typeOf "submit"}}
+					{{> c-form__submit }}
+
+				{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}{{/is}}
+			</div>
+		{{/each}}
+	</div>
+</fieldset>

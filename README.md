@@ -1,6 +1,6 @@
-## PG Components Starter Kit
+## Veams Components Starter Kit
 
-PG Components Starter Kit is a simple partials library to speed up your workflow with the Prototype-Generator (PG).
+Veams Components Starter Kit is a simple partials library to speed up your workflow with Veams-Generator.
 
 ### Requirements
 
@@ -14,7 +14,7 @@ If you want to install it with Bower, here are the requirements:
 ### Installation
 
 ``` bash
-bower install pg-components --save
+bower install veams-components --save
 ```
 
 ### How to use
@@ -29,14 +29,12 @@ Here you can find general components. just copy and paste the files you need int
 
 Each component has a data (JSON) and style (SCSS) file in the same folder. 
 
-#### `panels`
+#### `wrap-with`
 
-In the `panels` folder you can find panel templates (also called factory or mini template). 
+In the `wrap-with` folder you can find panel templates (also called factory or mini template). 
 These templates can be used to wrap components and modules and structure your code base. 
 
-Just copy and paste a `panel` into `resources/templates/partials/panels` and be sure you have added this folder to your assemble task. 
-
-To see how it works, take a look at `resources/templates/pages/page-section.hbs`.
+Just copy and paste a `wrap-with` into `resources/templates/partials/wrap-with` and be sure you have added this folder to your assemble task. 
 
 #### `markdown`
 

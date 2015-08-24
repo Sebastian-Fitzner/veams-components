@@ -1,18 +1,14 @@
-{{#is wrapper true}}
-	<div class="form__col-left">
-{{/is}}
-	<label for="{{ id }}">
-		{{ label }} {{#is required "required"}}<abbr title="Required">*</abbr>{{/is}}
-	</label>
-{{#is wrapper true}}
+<div class="form__textarea">
+	<div class="form__col-label">
+		<label for="{{ id }}">
+			{{ label }} {{#is required "required"}}<abbr title="Required">*</abbr>{{/is}}
+		</label>
 	</div>
-	<div class="form__col-right">
-{{/is}}
-	<textarea id="{{id}}" rows="5" {{#if data-minlength}}data-minlength="{{data-minlength}}"{{/if}}
-		{{#if data-maxlength}}data-maxlength="{{data-maxlength}}"{{/if}}
-		{{#if data-errormessage}}data-errormessage="{{data-errormessage}}"{{/if}}
-		{{#is required "required"}}required="required"{{/is}}
-		      placeholder="{{ placeholder }}"></textarea>
-{{#is wrapper true}}
+	<div class="form__col-input">
+		<textarea id="{{id}}" rows="5" placeholder="{{ placeholder }}"
+			{{#if minlength}} data-minlength="{{minlength}}"{{/if}}
+			{{#if maxlength}} data-maxlength="{{maxlength}}"{{/if}}
+			{{#if dataErrormessage}} data-errormessage="{{dataErrormessage}}"{{/if}}
+			{{#if required}} required="required"{{/if}}></textarea>
 	</div>
-{{/is}}
+</div>

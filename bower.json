@@ -1,26 +1,10 @@
 {
 	"name": "pg-components",
-	"version": "0.2.2",
+	"version": "1.0.0",
 	"ignore": [
-		"_dist",
-		"demo",
-		"helpers",
-		"resources/assets",
-		"resources/scss",
-		"resources/data",
-		"resources/js",
-		"resources/templates",
-		"resources/bower-components",
 		".bowerrc",
 		".gitignore",
 		"bower.json",
-		"Gruntfile.js",
-		"package.json",
 		"README.md"
-	],
-	"devDependencies": {
-		"bourbon": "~3.1.8",
-		"neat": "~1.5.0",
-		"pg-scss": "~0.1.5"
-	}
+	]
 }

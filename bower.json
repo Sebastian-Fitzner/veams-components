@@ -6,5 +6,15 @@
 		".gitignore",
 		"bower.json",
 		"README.md"
-	]
+	],
+	"authors": [
+		{
+			"name": "Sebastian Fitzner",
+			"email": "sebastian@jci-werbeagentur.com"
+		}
+	],
+	"repository": {
+	  "type": "git",
+	  "url": "git://github.com/Sebastian-Fitzner/veams-components.git"
+	}
 }

@@ -2,16 +2,18 @@
 component: teaser
 ---
 
-<div class="c-teaser{{#if teaserModifierClass}}--{{teaserModifierClass}}{{/if}}{{#if teaserClasses}} {{teaserClasses}}{{/if}}" data-css="c-teaser">
+<div class="c-teaser{{#if teaserContextClass}}--{{teaserContextClass}}{{else}}--default{{/if}}{{#if teaserClasses}} {{teaserClasses}}{{/if}}" data-css="c-teaser">
 	{{#if teaserLink}}
 	<a class="teaser__link" href="#" title="{{teaserHeadline}}">
 	{{/if}}
 
 	{{#if teaserFigure}}
-		{{> c-figure teaserFigure}}
+		<div class="teaser__figure">
+			{{> c-figure teaserFigure}}
+		</div>
 	{{/if}}
 
-	<div class="teaser__wrapper">
+	<div class="teaser__content-wrapper">
 		{{#if teaserDate}}
 			<time class="teaser__date" datetime="2014-11-13T20:00+00:00">{{teaserDate}}</time>
 		{{/if}}

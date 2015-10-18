@@ -8,7 +8,17 @@ Global Styles
 [data-css="c-teaser"] {
 	.teaser__link {
 	}
-	.teaser__wrapper {
+
+	/*
+	Figure
+	----------------------- */
+	.teaser__figure {
+	}
+
+	/*
+	Content
+	----------------------- */
+	.teaser__content-wrapper {
 	}
 	.teaser__date {
 	}
@@ -16,11 +26,15 @@ Global Styles
 	}
 	.teaser__content {
 	}
+
+	/*
+	Footer
+	----------------------- */
 	.teaser__footer {
 	}
 }
 
 /* ---------------------------------------------------
-Modifier
+Context: Default
 --------------------------------------------------- */
-.c-teaser--modifier {}
+.c-teaser--default {}

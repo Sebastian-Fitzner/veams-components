@@ -6,12 +6,12 @@ CTA COMPONENT
 Global Styles
 --------------------------------------------------- */
 [data-css="c-cta"] {
-	span {
-	}
+	.cta__icon {}
+	.cta__content {}
 }
 
 /* ---------------------------------------------------
-Modifier
+Context: Default
 --------------------------------------------------- */
-.c-cta--modifier {
+.c-cta--default {
 }

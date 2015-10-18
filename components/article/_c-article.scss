@@ -6,6 +6,10 @@ ARTICLE COMPONENT
 Global Styles
 --------------------------------------------------- */
 [data-css="c-article"] {
+
+	/*
+	Header
+	----------------------- */
 	.article__header {
 	}
 
@@ -21,9 +25,21 @@ Global Styles
 	.article__header-intro {
 	}
 
+	/*
+	Figure
+	----------------------- */
+	.article__figure {
+	}
+
+	/*
+	Content
+	----------------------- */
 	.article__content {
 	}
 
+	/*
+	Footer
+	----------------------- */
 	.article__footer {
 	}
 
@@ -32,7 +48,7 @@ Global Styles
 }
 
 /* ---------------------------------------------------
-Modifier
+Context: Default Example
 --------------------------------------------------- */
-.c-article--modifier {
+.c-article--default {
 }

@@ -1,13 +1,13 @@
 {
 	"accordion": {
-		"accModifierClass": "default",
+		"accContextClass": "default",
 		"accContext": "c-accordion",
 		"data": [
 			{
 				"accId": "1",
 				"accCta": {
 					"ctaTarget": "#",
-					"ctaModifierClass": "accordion",
+					"ctaContextClass": "accordion",
 					"ctaContent": "Beispiel Text",
 					"ctaJsModule": true,
 					"ctaJsOptions": [
@@ -32,7 +32,7 @@
 				"toggleId": "acc-01",
 				"toggleDataJsOptions": "{\"singleOpen\": \"true\"}",
 				"toggleMd": {
-					"rteModifierClass": "accordion",
+					"rteContextClass": "accordion",
 					"rteMd": "resources/templates/data/markdown/text.md"
 				}
 			},
@@ -40,7 +40,7 @@
 				"accId": "2",
 				"accCta": {
 					"ctaTarget": "#",
-					"ctaModifierClass": "accordion",
+					"ctaContextClass": "accordion",
 					"ctaContent": "Beispiel Text",
 					"ctaJsModule": true,
 					"ctaJsOptions": [
@@ -65,7 +65,7 @@
 				"toggleId": "acc-02",
 				"toggleDataJsOptions": "{\"singleOpen\": \"true\"}",
 				"toggleMd": {
-					"rteModifierClass": "accordion",
+					"rteContextClass": "accordion",
 					"rteMd": "resources/templates/data/markdown/text.md"
 				}
 			}

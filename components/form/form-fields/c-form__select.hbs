@@ -7,7 +7,8 @@
 	<div class="form__col-input">
 		<select id="{{id}}" class="{{class}}" name="{{id}}"
 		{{#each dataAttr}} {{attrKey}}="{{{attrValue}}}"{{/each}}
-		{{#if required}} required="required"{{/if}}>
+		{{#if required}} required="required"{{/if}}
+		data-js-module="dropdown">
 		{{#each option}}
 			<option value="{{val}}"{{#if disabled}} disabled{{/if}}{{#if selected}} selected{{/if}}>{{name}}</option>
 		{{/each}}

@@ -10,7 +10,6 @@ Global Styles
 	overflow-x: auto;
 	overflow-y: hidden;
 	max-width: 100%;
-	background-color: transparent;
 
 	/*
 	Sub Elements
@@ -51,19 +50,19 @@ Global Styles
 }
 
 /* ---------------------------------------------------
-Zebra Table Modifier
+Context: Zebra Table
 --------------------------------------------------- */
 .c-table--zebra {
-
 	/*
 	Sub Elements
 	----------------------- */
-	.table__row:nth-child(n+1) {
-		background-color: transparent;
-	}
-
-	.table__row:nth-child(2n+2) {
-		background-color: #F5F5F5;
+	.table__row {
+		&:nth-child(n+1) {
+			background-color: transparent;
+		}
+		&:nth-child(2n+2) {
+			background-color: #F5F5F5;
+		}
 	}
 
 	/*

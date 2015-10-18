@@ -1,6 +1,6 @@
 {
 	"tableWithHead": {
-		"tableModifierClass": "zebra",
+		"tableContextClass": "zebra",
 		"tableCaption": "2015",
 		"tableHeader": {
 			"data": [
@@ -58,7 +58,7 @@
 		}
 	},
 	"tableHeadLeft": {
-		"tableModifierClass": "zebra",
+		"tableContextClass": "zebra",
 		"tableCaption": "2015",
 		"tableHeader": false,
 		"tableRow": {
@@ -103,7 +103,7 @@
 		}
 	},
 	"tableWithoutHead": {
-		"tableModifierClass": "zebra",
+		"tableContextClass": "zebra",
 		"tableCaption": "2015",
 		"tableHeader": false,
 		"tableRow": {

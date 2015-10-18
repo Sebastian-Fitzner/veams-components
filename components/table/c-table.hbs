@@ -2,7 +2,7 @@
 component: table
 ---
 
-<div class="c-table{{#if tableModifierClass}}--{{tableModifierClass}}{{/if}} {{tableClasses}}" data-css="c-table">
+<div class="c-table{{#if tableContextClass}}--{{tableContextClass}}{{/if}}{{#if tableClasses}} {{tableClasses}}{{/if}}" data-css="c-table">
 	<table class="table__content">
 		{{#if tableCaption}}
 			<caption class="table__caption">

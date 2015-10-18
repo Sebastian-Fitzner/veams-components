@@ -1,9 +1,7 @@
-{{!
---------------------------------------
+{{! --------------------------------------
 component: form
---------------------------------------
-}}
+-------------------------------------- }}
 
-<form class="c-form{{#if options.modifier}}--{{options.modifier}}{{/if}}{{#if classes}}{{classes}}{{/if}}" action="{{options.action}}" method="{{options.method}}" data-css="c-form" data-js-module="form">
+<form class="c-form{{#if options.context}}--{{options.context}}{{else}}--default{{/if}}{{#if classes}}{{classes}}{{/if}}" action="{{options.action}}" method="{{options.method}}" data-css="c-form" data-js-module="form" data-js-options='{}'>
 	{{{yield}}}
 </form>

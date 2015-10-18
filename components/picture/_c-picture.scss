@@ -6,10 +6,13 @@ PICTURE COMPONENT
 Global Styles
 --------------------------------------------------- */
 [data-css="c-picture"] {
+	img {
+		max-width: 100%;
+	}
 }
 
 /* ---------------------------------------------------
-Modifier
+Context: Default
 --------------------------------------------------- */
-.c-picture--modifier {
+.c-picture--default {
 }

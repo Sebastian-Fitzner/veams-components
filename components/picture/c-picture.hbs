@@ -2,7 +2,7 @@
 component: picture
 ---
 
-<picture class="c-picture{{#if pictureModifierClass}}--{{pictureModifierClass}}{{/if}} {{pictureClasses}}" data-css="c-picture">
+<picture class="c-picture{{#if pictureContextClass}}--{{pictureContextClass}}{{else}}--default{{/if}}{{#if pictureClasses}} {{pictureClasses}}{{/if}}" data-css="c-picture">
 
 	<!--[if IE 9]><audio><![endif]-->
 	{{#if picture320}}

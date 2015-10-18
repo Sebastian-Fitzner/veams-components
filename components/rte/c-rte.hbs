@@ -2,7 +2,7 @@
 component: rich-text-editor
 ---
 
-<div class="c-rte{{#if rteModifierClass}}--{{rteModifierClass}}{{/if}} {{rteClasses}}" data-css="c-rte">
+<div class="c-rte{{#if rteContextClass}}--{{rteContextClass}}{{else}}--default{{/if}}{{#if rteClasses}} {{rteClasses}}{{/if}}" data-css="c-rte">
 	{{#if rteMd}}
 		{{md rteMd}}
 	{{/if}}

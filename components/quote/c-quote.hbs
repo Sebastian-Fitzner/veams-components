@@ -1,7 +1,7 @@
 ---
 component: quote
 ---
-<div class="c-quote{{#if quoteModifierClass}}--{{quoteModifierClass}}{{/if}} {{quoteClasses}}" data-css="c-quote">
+<div class="c-quote{{#if quoteContextClass}}--{{quoteContextClass}}{{else}}--default{{/if}}{{#if quoteClasses}} {{quoteClasses}}{{/if}}" data-css="c-quote">
 	<blockquote class="quote__content">
 		{{quoteContent}}
 	</blockquote>

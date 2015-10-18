@@ -1,5 +1,5 @@
 {
-	"rteModifierClass": "content",
+	"rteContextClass": "content",
 	"rteClasses": "is-small",
-	"rteMd": "markdown/text.md"
+	"rteMd": "resources/data/markdown/text.md"
 }

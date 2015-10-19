@@ -1,0 +1,30 @@
+---
+component: pagination
+---
+
+<div class="c-pagination{{#if pagContext}}--{{pagContext}}{{else}}--default{{/if}}{{#if pagClasses}} {{pagClasses}}{{/if}}" data-css="c-pagination">
+	<ul class="pagination__list" data-js-atom="search-results-pagination">
+		<li class="pagination__list-item is-disabled">
+			<strong class="pagination__list-element is-previous"><span class="is-hidden">One Page</span>Back</strong>
+		</li>
+		<li class="pagination__list-item is-active">
+			<span class="is-hidden">{{pagCurrent}}</span> <strong class="pagination__list-element">1</strong>
+		</li>
+		<li class="pagination__list-item">
+			<a class="pagination__list-element" href="#">2</a>
+		</li>
+		<li class="pagination__list-item">
+			<a class="pagination__list-element" href="#">3</a>
+		</li>
+		<li class="pagination__list-item is-more">
+			<a class="pagination__list-element" href="#">...</a>
+		</li>
+		<li class="pagination__list-item">
+			<a class="pagination__list-element" href="#">{{pagMax}}</a>
+		</li>
+		<li class="pagination__list-item">
+			<a class="pagination__list-element is-next" href="#" title="One Page Forward">
+				<span class="is-hidden">One Page</span>Forward </a>
+		</li>
+	</ul>
+</div>

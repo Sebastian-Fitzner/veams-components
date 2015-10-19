@@ -1,0 +1,10 @@
+{
+	"pagContext": "search",
+	"pagClasses": "is-right",
+	"pagButtons": {
+		"pageDesciption": "One Page",
+		"previous": "Back",
+		"next": "Forward"
+	},
+	"pagMax": "12"
+}

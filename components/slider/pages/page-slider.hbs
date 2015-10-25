@@ -1,0 +1,11 @@
+{{! wrapWith START: Slider }}
+{{#with slider.slider}}
+	{{#wrapWith "slider"}}
+		{{#each data}}
+			{{#wrapWith "slider__item"}}
+				{{> c-figure sliderFigure}}
+			{{/wrapWith}}
+		{{/each}}
+	{{/wrapWith}}
+{{/with}}
+{{! wrapWith END: Slider}}

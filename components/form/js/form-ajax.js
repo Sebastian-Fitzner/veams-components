@@ -7,11 +7,20 @@
 
 import Helpers from '../../utils/helpers';
 import App from '../../app';
-import AppModule from '../_global/moduleView';
+import AppModule from '../_global/module';
 
-var $ = App.$;
+const $ = App.$;
 
 class FormAjax extends AppModule {
+	/**
+	 * Constructor for our class
+	 *
+	 * @see module.js
+	 *
+	 * @param {obj} obj - Object which is passed to our class
+	 * @param {obj.el} obj - element which will be saved in this.el
+	 * @param {obj.options} obj - options which will be passed in as JSON object
+	 */
 	constructor(obj) {
 		let options = {
 			submitOnLoad: false,

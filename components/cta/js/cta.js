@@ -21,7 +21,7 @@ class CtaHandler extends AppModule {
 	 * @param {obj.options} obj - options which will be passed in as JSON object
 	 */
 	constructor(obj) {
-		var options = {
+		let options = {
 			activeClass: 'is-active',
 			context: false,
 			singleOpen: false
@@ -32,10 +32,9 @@ class CtaHandler extends AppModule {
 	/**
 	 * Initialize the view and merge options
 	 *
-	 * @param {obj} obj - contains options as JSON which will be merged with predefined options
 	 */
-	initialize(obj) {
-		this.bindEvents();
+	initialize() {
+		super.initialize();
 	}
 
 	/**
@@ -44,9 +43,12 @@ class CtaHandler extends AppModule {
 	 * Listen to open and close events
 	 */
 	bindEvents() {
+		// Global events
 		App.Vent.on(App.Events.btnClose, this.close.bind(this));
 		App.Vent.on(App.Events.btnOpen, this.open.bind(this));
-		this.$el.on('click', this.onClick.bind(this));
+
+		// Local events
+		this.$el.on(App.clickHandler, this.onClick.bind(this));
 	}
 
 	/**

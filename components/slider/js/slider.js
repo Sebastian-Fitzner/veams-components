@@ -9,7 +9,7 @@
 import App from '../../app';
 import Helpers from '../../utils/helpers';
 import AppModule from '../_global/module';
-var $ = App.$;
+const $ = App.$;
 require('touchswipe')($);
 
 class Slider extends AppModule {
@@ -128,9 +128,9 @@ class Slider extends AppModule {
 		App.Vent.on(App.Events.resize, this.render.bind(this));
 
 		// Local Events
-		this.prev.on(App.clickHandler, this.showPrevElement.bind(this));
-		this.next.on(App.clickHandler, this.showNextElement.bind(this));
-		this.paginationItems.on(App.clickHandler, this.navigateToElement.bind(this));
+		this.$el.on(App.clickHandler, this.options.prev, this.showPrevElement.bind(this));
+		this.$el.on(App.clickHandler, this.options.next, this.showNextElement.bind(this));
+		this.$el.on(App.clickHandler, this.options.paginationItemClass, this.navigateToElement.bind(this));
 	}
 
 	/**
@@ -141,9 +141,7 @@ class Slider extends AppModule {
 		App.Vent.off(App.Events.resize);
 
 		// Local Events
-		this.prev.off(App.clickHandler);
-		this.next.off(App.clickHandler);
-		this.paginationItems.off(App.clickHandler);
+		this.$el.off(App.clickHandler);
 	}
 
 	// Renders the view's template to the UI

@@ -1,0 +1,14 @@
+{{! ---
+component: carousel
+--- }}
+
+<div class="c-carousel{{#if options.contextClass}}--{{options.contextClass}}{{else}}--default{{/if}}" id="{{options.id}}" data-css="c-carousel" data-js-module="carousel" data-js-options="{{options.jsOptions}}">
+
+	<div class="carousel__list" data-js-atom="carousel-list">
+		{{{yield}}}
+	</div>
+
+	{{#if options.pagination}}
+		{{> m-carousel__pagination}}
+	{{/if}}
+</div>

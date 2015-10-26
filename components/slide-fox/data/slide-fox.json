@@ -1,0 +1,14 @@
+{
+	"slideFox": {
+		"options": {
+			"contextClass": false,
+			"modifierClasses": false,
+			"jsOptions": [
+				{
+					"jsKey": "",
+					"jsValue": ""
+				}
+			]
+		}
+	}
+}

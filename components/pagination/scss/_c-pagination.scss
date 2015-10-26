@@ -29,12 +29,14 @@ Global Styles
 }
 
 /* ---------------------------------------------------
-Results Filter
+Context: Default
+- REQUIREMENTS: veams-sass
 --------------------------------------------------- */
 .b-pagination--default {
-	$results-blue: $color-main-dark;
-	$results-light: $color-main-light;
-	$results-white: $color-white;
+	$results-blue: #333;
+	$results-light: #ccc;
+	$results-white: #fff;
+	$transition-ease-method: ease;
 
 	.is-hidden {
 		display: none;
@@ -71,20 +73,18 @@ Results Filter
 	}
 
 	.pagination__list-element {
-		@include transition(color 0.2s $transition-ease-method);
-
 		color: $results-blue;
-		padding: 14px 0;
-		font-weight: 400;
-		text-decoration: none;
-		font-size: 1.9rem;
-		line-height: 20px;
 		display: block;
+		font-size: 1.9rem;
+		font-weight: 400;
+		line-height: 2;
+		padding: 14px 0;
+		text-decoration: none;
+		transition: color 0.2s $transition-ease-method;
 
 		&.is-active {
-			@include transition(color 0.2s $transition-ease-method);
-
 			color: $results-light;
+			transition: color 0.2s $transition-ease-method;
 		}
 
 		&.is-previous,
@@ -97,8 +97,6 @@ Results Filter
 				@extend %pseudo;
 				@include centering(hv);
 
-				top: 50%;
-				left: 50%;
 				opacity: 1;
 			}
 		}
@@ -112,10 +110,5 @@ Results Filter
 			&::after {
 			}
 		}
-	}
-
-	.pagination__wrapper {
-		float: right;
-		width: auto;
 	}
 }

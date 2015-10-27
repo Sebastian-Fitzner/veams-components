@@ -1,0 +1,9 @@
+{{! ---
+component: toggle
+--- }}
+
+<div id="{{options.id}}" class="c-toggle{{#if options.contextClass}}--{{options.contextClass}}{{else}}--default{{/if}}" data-css="c-toggle" data-js-module="toggle" data-js-options='{
+	{{#each jsOptions}}"{{jsKey}}": "{{{jsValue}}}"{{#if @last}}{{else}}, {{/if}}{{/each}}
+}'>
+	{{{yield}}}
+</div>

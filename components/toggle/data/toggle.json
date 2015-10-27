@@ -1,0 +1,14 @@
+{
+	"toggle": {
+		"options": {
+			"id": "custom-01",
+			"contextClass": false,
+			"jsOptions": [
+				{
+					"jsKey": "",
+					"jsValue": ""
+				}
+			]
+		}
+	}
+}

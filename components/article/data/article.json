@@ -1,7 +1,7 @@
 {
 	"simple": {
-		"articleContextClass": "custom",
-		"articleClasses": "is-top",
+		"articleContextClass": false,
+		"articleClasses": "is-bg-higlight-1",
 		"articleHeader": {
 			"articleHeaderClasses": "is-header",
 			"articleDate": "10.04.2015",
@@ -11,7 +11,7 @@
 		},
 		"articleContentClasses": "is-visible",
 		"articleMd": {
-			"rteModifierClass": "simple",
+			"rteModifierClass": "article",
 			"rteMd": "resources/data/markdown/text.md"
 		},
 		"articleFooter": {
@@ -21,15 +21,15 @@
 	},
 	"articleWithImage": {
 		"articleContextClass": "image",
-		"articleClasses": "is-highlight-1",
+		"articleClasses": false,
 		"articleHeader": {
 			"articleHeaderClasses": "is-header",
 			"articleDate": "12.04.2015",
-			"articleH1": "Article Headline with Images",
+			"articleH1": "A Second Article Headline",
 			"articleH2": "Article Subline",
 			"articleIntro": "Article Intro"
 		},
-		"articleFigureClasses": "is-left",
+		"articleFigureClasses": "is-right",
 		"articleFigure": {
 			"figureContextClass": "article",
 			"pictureUrlStd": "img/temp/pictures/article/pic-01-769.jpg",
@@ -37,25 +37,23 @@
 			"picture320_2x": "img/temp/pictures/article/pic-01-320_2x.jpg",
 			"picture480": "img/temp/pictures/article/pic-01-480.jpg",
 			"picture480_2x": "img/temp/pictures/article/pic-01-480_2x.jpg",
-			"picture481": "img/temp/pictures/article/pic-01-640.jpg",
-			"picture481_2x": "img/temp/pictures/article/pic-01-640_2x.jpg",
+			"picture481": "img/temp/pictures/article/pic-01-481.jpg",
+			"picture481_2x": "img/temp/pictures/article/pic-01-481_2x.jpg",
 			"picture768": "img/temp/pictures/article/pic-01-768.jpg",
 			"picture768_2x": "img/temp/pictures/article/pic-01-768_2x.jpg",
 			"picture769": "img/temp/pictures/article/pic-01-769.jpg",
 			"picture769_2x": "img/temp/pictures/article/pic-01-769_2x.jpg",
 			"figureCaption": {
-				"captionHeadline": "This is my figure."
+				"captionHeadline": "This is my figure headline",
+				"captionContent": "And here is some custom text which describes the figure."
 			}
 		},
-		"articleContentClasses": "is-right",
+		"articleContentClasses": "is-left",
 		"articleMd": {
 			"rteModifierClass": "article",
 			"rteClasses": "is-full",
 			"rteMd": "resources/data/markdown/text.md"
 		},
-		"articleFooter": {
-			"articleFooterClasses": "is-margin",
-			"articleFooterLink": "Read more"
-		}
+		"articleFooter": false
 	}
 }

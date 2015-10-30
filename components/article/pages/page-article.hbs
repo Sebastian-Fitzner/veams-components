@@ -1,0 +1,33 @@
+---
+title: Articles - Build Better Prototypes with Veams
+menuLink: Articles
+---
+
+{{#extend "lyt-default"}}
+	{{#content "main"}}
+
+	{{! WrapWith START: Article }}
+		{{#wrapWith "p-zone" headline="Article without Image" bg-color="highlight-1"}}
+			{{#with article.simple}}
+				{{> c-article}}
+			{{/with}}
+		{{/wrapWith}}
+		{{! WrapWith END: Article }}
+
+		{{! WrapWith START: Article }}
+		{{#wrapWith "p-zone" headline="Article with Image"}}
+			{{#with article.articleWithImage}}
+				{{> c-article}}
+			{{/with}}
+		{{/wrapWith}}
+	{{! WrapWith END: Article }}
+		{{! WrapWith START: Article }}
+		{{#wrapWith "p-zone" headline="Article with multiple content elements" bg-color="highlight-1"}}
+			{{#with article.multipleContent}}
+				{{> c-article}}
+			{{/with}}
+		{{/wrapWith}}
+	{{! WrapWith END: Article }}
+
+	{{/content}}
+{{/extend}}

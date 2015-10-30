@@ -11,7 +11,7 @@
 		},
 		"articleContentClasses": "is-visible",
 		"articleMd": {
-			"rteModifierClass": "article",
+			"rteContextClass": "article",
 			"rteMd": "resources/data/markdown/text.md"
 		},
 		"articleFooter": {
@@ -50,9 +50,42 @@
 		},
 		"articleContentClasses": "is-left",
 		"articleMd": {
-			"rteModifierClass": "article",
+			"rteContextClass": "image",
 			"rteClasses": "is-full",
 			"rteMd": "resources/data/markdown/text.md"
+		},
+		"articleFooter": false
+	},
+	"multipleContent": {
+		"articleContextClass": "content",
+		"articleClasses": false,
+		"articleHeader": {
+			"articleHeaderClasses": "is-header",
+			"articleDate": false,
+			"articleH1": "Article Headline",
+			"articleH2": "Article Subline",
+			"articleIntro": "Article Intro"
+		},
+		"articleContentClasses": "is-visible",
+		"articleMd": {
+			"rteContextClass": "content",
+			"rtes": [
+				{
+					"rteMd": "resources/data/markdown/text.md"
+				},
+				{
+					"rteMd": "resources/data/markdown/h3.md"
+				},
+				{
+					"rteMd": "resources/data/markdown/table.md"
+				},
+				{
+					"rteMd": "resources/data/markdown/h3.md"
+				},
+				{
+					"rteMd": "resources/data/markdown/ul.md"
+				}
+			]
 		},
 		"articleFooter": false
 	}

@@ -1,6 +1,6 @@
 {{#if options.headline}}
 	<header class="zone__header{{#if options.center-header}} is-container{{/if}}">
-		<{{#isnt options.h1 true}}h2{{else}}h1{{/isnt}} class="zone__header-headline{{#if options.headline-class}} {{options.headline-class}}{{/if}}">{{options.headline}}</{{#isnt options.h1 true}}h2{{else}}h1{{/isnt}}>
+		<{{#isnt options.h1 true}}h2{{else}}h1{{/isnt}} class="zone__headline{{#if options.headline-class}} {{options.headline-class}}{{/if}}">{{options.headline}}</{{#isnt options.h1 true}}h2{{else}}h1{{/isnt}}>
 
 		{{#if options.intro-text}}
 			<p class="zone__header-intro{{#if options.intro-text-class}} {{options.intro-text-class}}{{/if}}">{{options.intro-text}}</p>
@@ -13,9 +13,9 @@
 </div>
 
 {{#if options.button}}
-	<footer class="zone__footer is-container">
+	<footer class="zone__footer{{#if options.center-header}} is-container{{/if}}">
 		<a href="#" title="{{options.button}}"
-		   class="c-cta{{#if options.modifier}}--{{options.modifier}}{{/if}}"
+		   class="c-cta{{#if options.context}}--{{options.context}}{{/if}}"
 		   data-css="c-cta">
 			<span>{{options.button}}</span>
 		</a>

@@ -39,7 +39,9 @@ class EqualHeight extends AppModule {
 	}
 
 	bindEvents() {
-		App.Vent.on(App.Events.resize, this.render.bind(this));
+		let render = this.render.bind(this);
+
+		App.Vent.on(App.Events.resize, render);
 	}
 
 	_resetStyles(el) {

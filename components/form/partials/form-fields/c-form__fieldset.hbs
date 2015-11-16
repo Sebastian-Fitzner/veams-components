@@ -2,9 +2,9 @@
 component: fieldset
 ---
 
-<fieldset class="form__fieldset{{#if fieldsetClass}} {{fieldsetClass}}{{/if}}">
+<fieldset class="form__fieldset{{#if fieldsetClasses}} {{fieldsetClasses}}{{/if}}">
 	<legend{{#if legendClasses}} class="{{ legendClasses }}"{{/if}}>{{ legend }}</legend>
-	<div class="form__row {{ row-classes }}">
+	<div class="form__row {{ rowClasses }}">
 
 		{{#each data}}
 			<div class="form__col {{ colClasses }}">

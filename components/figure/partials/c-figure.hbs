@@ -6,8 +6,8 @@ component: figure
 	<div class="figure__wrapper">
 		{{#if pictureUrlStd}}
 			{{> c-picture}}
-		{{else}}{{#if video}}
-			{{> c-video}}
+		{{else}}{{#if figureVideo}}
+			{{> c-video figureVideo}}
 		{{/if}}{{/if}}
 	</div>
 	{{#if figureCaption}}

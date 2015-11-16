@@ -48,15 +48,17 @@ class FormAjax extends AppModule {
 	 * Bind all evente
 	 */
 	bindEvents() {
+		let fetchData = this.fetchData.bind(this);
+		let reset = this.resetFilters.bind(this);
 		/**
 		 * On submit event fetch data
 		 */
-		this.$el.on('submit reset', this.fetchData.bind(this));
+		this.$el.on('submit reset', fetchData);
 
 		/**
 		 * Reset filters on reset event
 		 */
-		App.Vent.on(App.Events.formReset, this.resetFilters.bind(this));
+		App.Vent.on(App.Events.formReset, reset);
 
 		/**
 		 * If submitOnChange is true
@@ -66,12 +68,8 @@ class FormAjax extends AppModule {
 		 *
 		 */
 		if (this.options.submitOnChange) {
-			this.$el.on('blur change', this.fields, (e) => {
-				this.fetchData(e);
-			});
-			App.Vent.on(App.Events.selectChanged, (e) => {
-				this.fetchData(e);
-			});
+			this.$el.on('blur change', this.fields, fetchData);
+			App.Vent.on(App.Events.selectChanged, fetchData);
 		}
 	}
 

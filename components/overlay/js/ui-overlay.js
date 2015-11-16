@@ -12,7 +12,7 @@ App.ui.Overlay = App.ComponentView.extend({
 		openClass: 'is-visible',
 		content: '',
 		url: '',
-		type: 'figure', // figure, ajax, content, gallery
+		type: 'figure', // figure, ajax, content
 		caption: '',
 		author: ''
 	},
@@ -25,7 +25,6 @@ App.ui.Overlay = App.ComponentView.extend({
 	initialize: function(obj) {
 		this.options = Helpers.defaults(obj.options || {}, this.options); // get/set default options
 		this.tplContent = Template['MOVERLAY__CONTENT'];
-		this.tplGallery = Template['MOVERLAY__GALLERY'];
 		this.bindEvents();
 	},
 
@@ -112,11 +111,6 @@ App.ui.Overlay = App.ComponentView.extend({
 
 	_renderType: function(obj) {
 		switch (this.options.type) {
-			case 'gallery':
-				this.$el.addClass('m-overlay--gallery');
-				this._buildGallery(obj.el[0]);
-				this.overlayContentWrapper.html(this.tplGallery(this.buttons));
-				break;
 			case 'figure':
 				this.$el.addClass('m-overlay--figure');
 				this.overlayContentWrapper.html(this.tplContent(this.options));
@@ -125,22 +119,6 @@ App.ui.Overlay = App.ComponentView.extend({
 				this.$el.addClass('m-overlay--content');
 				this.overlayContentWrapper.html(this.tplContent(this.options));
 		}
-	},
-
-	_buildGallery: function(button) {
-		this.context = $(button).closest(this.options.context);
-		this.buttons = this.context.find('ui-button');
-		var index = Helpers.indexOf(this.buttons, button);
-
-		if (index !== 0) {
-			setTimeout(function() {
-				App.Vent.trigger('CarouselView:changeSlide', {
-					slideIndex: index + 1,
-					direction: "next"
-				})
-			}, 150);
-		}
-
 	}
 });
 // Returns the View class

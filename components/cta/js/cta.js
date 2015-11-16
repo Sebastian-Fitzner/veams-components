@@ -24,7 +24,8 @@ class CtaHandler extends AppModule {
 		let options = {
 			activeClass: 'is-active',
 			context: false,
-			singleOpen: false
+			singleOpen: false,
+			hander: 'click'
 		};
 		super(obj, options);
 	}
@@ -43,12 +44,16 @@ class CtaHandler extends AppModule {
 	 * Listen to open and close events
 	 */
 	bindEvents() {
+		let close = this.close.bind(this);
+		let open = this.open.bind(this);
+		let onClick = this.onClick.bind(this);
+
 		// Global events
-		App.Vent.on(App.Events.btnClose, this.close.bind(this));
-		App.Vent.on(App.Events.btnOpen, this.open.bind(this));
+		App.Vent.on(App.Events.btnClose, close);
+		App.Vent.on(App.Events.btnOpen, open);
 
 		// Local events
-		this.$el.on(App.clickHandler, this.onClick.bind(this));
+		this.$el.on(this.options.handler, onClick);
 	}
 
 	/**

@@ -1,0 +1,147 @@
+{
+	"options": {
+		"context": false,
+		"classes": "is-form",
+		"action": "ajax/test.html",
+		"method": "GET",
+		"ajax": true
+	},
+	"fieldsets": [
+		{
+			"fieldsetClasses": "is-small",
+			"legendClasses": "is-legend",
+			"rowClasses": "first-row",
+			"data": [
+				{
+					"colClasses": "col-1",
+					"typeOf": "input",
+					"type": "text",
+					"id": "name",
+					"labelClasses": "is-label",
+					"label": "Name",
+					"required": true,
+					"inputClasses": "is-text",
+					"placeholder": "Name",
+					"attr": [
+						{
+							"attrKey": "",
+							"attrValue": ""
+						}
+					],
+					"pattern": false,
+					"errorMessage": "You have to provide a name."
+				},
+				{
+					"colClasses": "col-1",
+					"typeOf": "input",
+					"type": "email",
+					"id": "email",
+					"labelClasses": "is-label",
+					"label": "Mail",
+					"required": true,
+					"inputClasses": "is-mail",
+					"placeholder": "hello@example.com",
+					"attr": [
+						{
+							"attrKey": "",
+							"attrValue": ""
+						}
+					],
+					"pattern": false,
+					"errorMessage": "You have to provide a name."
+				},
+				{
+					"colClasses": "col-1",
+					"typeOf": "input",
+					"type": "number",
+					"id": "number",
+					"labelClasses": "is-label",
+					"label": "Number",
+					"required": false,
+					"inputClasses": "is-number",
+					"placeholder": "10",
+					"attr": [
+						{
+							"attrKey": "",
+							"attrValue": ""
+						}
+					],
+					"pattern": false
+				},
+				{
+					"colClasses": "col-1",
+					"typeOf": "select",
+					"id": "select",
+					"labelClasses": "is-label",
+					"label": "Select Fields",
+					"required": false,
+					"inputClasses": "is-select",
+					"attr": [
+						{
+							"attrKey": "",
+							"attrValue": ""
+						}
+					],
+					"option": [
+						{
+							"val": "all",
+							"disabled": true,
+							"selected": true,
+							"name": "All"
+						},
+						{
+							"val": "10",
+							"name": "10"
+						},
+						{
+							"val": "20",
+							"name": "20"
+						},
+						{
+							"val": "30",
+							"name": "30"
+						}
+					],
+					"pattern": false
+				},
+				{
+					"colClasses": "col-1",
+					"typeOf": "select",
+					"id": "select",
+					"labelClasses": "is-label",
+					"label": "Select Fields with JS",
+					"required": false,
+					"inputClasses": "is-select",
+					"jsModule": true,
+					"attr": [
+						{
+							"attrKey": "",
+							"attrValue": ""
+						}
+					],
+					"option": [
+						{
+							"val": "another",
+							"disabled": true,
+							"selected": true,
+							"name": "Another Select"
+						},
+						{
+							"val": "10",
+							"name": "10"
+						},
+						{
+							"val": "20",
+							"name": "20"
+						},
+						{
+							"val": "30",
+							"name": "30"
+						}
+					],
+					"pattern": false
+				}
+			]
+		}
+	]
+}

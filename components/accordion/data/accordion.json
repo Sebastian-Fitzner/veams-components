@@ -1,7 +1,7 @@
 {
 	"accordion": {
-		"accContextClass": "default",
-		"accContext": "c-accordion",
+		"context": "default",
+		"elementContext": "c-accordion",
 		"data": [
 			{
 				"accId": "1",

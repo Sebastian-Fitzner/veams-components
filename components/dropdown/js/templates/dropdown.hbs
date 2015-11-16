@@ -1,0 +1,12 @@
+<div class="c-dropdown--{{#if modifier}}{{modifier}}{{else}}default{{/if}}">
+	<span class="dropdown__placeholder">{{placeholder}}</span>
+	<ul class="dropdown__list">
+		{{#each option}}
+			<li class="dropdown__list-item" data-js-value="{{value}}">
+				<span class="dropdown__element">
+					{{name}}
+				</span>
+			</li>
+		{{/each}}
+	</ul>
+</div>

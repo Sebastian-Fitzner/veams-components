@@ -5,5 +5,7 @@ component: video
 <video poster="{{videoPoster}}" {{videoOptions}} tabindex="0" class="c-video{{#if videoContextClass}}--{{videoContextClass}}{{else}}--default{{/if}}{{#if videoClasses}} {{videoClasses}}{{/if}}" data-css="c-video">
 	<source src="{{videoMp4}}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'/>
 	<source src="{{videoWebm}}" type='video/webm; codecs="vp8, vorbis"'/>
-	<track src="{{videoTrack}}" kind="{{videoTrackSubtitle}}" srclang="{{videoTrackLang}}" label="{{videoTrackLabel}}"/>
+	{{#if videoTrack}}
+		<track src="{{videoTrack}}" kind="{{videoTrackSubtitle}}" srclang="{{videoTrackLang}}" label="{{videoTrackLabel}}"/>
+	{{/if}}
 </video>

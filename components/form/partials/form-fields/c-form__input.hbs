@@ -1,15 +1,15 @@
 <div class="form__input">
 	<div class="form__col-label">
-		<label for="{{ id }}"{{#if labelClass}} class="{{labelClass}}"{{/if}}>
+		<label for="{{id}}"{{#if labelClasses}} class="{{labelClasses}}"{{/if}}>
 			{{label}}{{#if required}} <abbr title="Required">*</abbr>{{/if}}
 		</label>
 	</div>
 	<div class="form__col-input">
 		<input id="{{id}}" type="{{type}}" placeholder="{{placeholder}}"
-		{{#each dataAttr}} {{attrKey}}="{{{attrValue}}}"{{/each}}
+		{{#each attr}} {{attrKey}}="{{{attrValue}}}"{{/each}}
 		{{#if required}} required="required"{{/if}}
 		{{#if pattern}} pattern="{{{ pattern }}}"{{/if}}
-		{{#if inputClass}} class="{{inputClass}}"{{/if}}/>
+		{{#if inputClasses}} class="{{inputClasses}}"{{/if}}/>
 	</div>
 	{{#if errorMessage}}
 		<div class="form__error" hidden="">

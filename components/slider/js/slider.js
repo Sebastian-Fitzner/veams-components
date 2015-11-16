@@ -124,13 +124,18 @@ class Slider extends AppModule {
 	 * Bind all events
 	 */
 	bindEvents() {
+		let render = this.render.bind(this);
+		let showPrev = this.showPrevElement.bind(this);
+		let showNext = this.showNextElement.bind(this);
+		let goTo = this.navigateToElement.bind(this);
+
 		// Global Events
-		App.Vent.on(App.Events.resize, this.render.bind(this));
+		App.Vent.on(App.Events.resize, render);
 
 		// Local Events
-		this.$el.on(App.clickHandler, this.options.prev, this.showPrevElement.bind(this));
-		this.$el.on(App.clickHandler, this.options.next, this.showNextElement.bind(this));
-		this.$el.on(App.clickHandler, this.options.paginationItemClass, this.navigateToElement.bind(this));
+		this.$el.on(App.clickHandler, this.options.prev, showPrev);
+		this.$el.on(App.clickHandler, this.options.next, showNext);
+		this.$el.on(App.clickHandler, this.options.paginationItemClass, goTo);
 	}
 
 	/**

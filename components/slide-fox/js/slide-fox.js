@@ -32,7 +32,7 @@ class SlideFox extends AppModule {
 	bindEvents() {
 		let render = this.render.bind(this);
 
-		App.Vent.on(App.Events.scroll, render);
+		App.Vent.on(App.EVENTS.scroll, render);
 	}
 
 	showSlideFox() {

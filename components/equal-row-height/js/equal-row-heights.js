@@ -41,7 +41,7 @@ class EqualHeight extends AppModule {
 	bindEvents() {
 		let render = this.render.bind(this);
 
-		App.Vent.on(App.Events.resize, render);
+		App.Vent.on(App.EVENTS.resize, render);
 	}
 
 	_resetStyles(el) {
@@ -119,7 +119,7 @@ class EqualHeight extends AppModule {
 		this.buildRow(this.childElements);
 
 		setTimeout(() => {
-			App.Vent.trigger(App.Events.equalRender, {
+			App.Vent.trigger(App.EVENTS.equalRender, {
 				el: this.$el,
 				childElements: this.childElements
 			});

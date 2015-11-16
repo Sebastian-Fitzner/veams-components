@@ -130,7 +130,7 @@ class Slider extends AppModule {
 		let goTo = this.navigateToElement.bind(this);
 
 		// Global Events
-		App.Vent.on(App.Events.resize, render);
+		App.Vent.on(App.EVENTS.resize, render);
 
 		// Local Events
 		this.$el.on(App.clickHandler, this.options.prev, showPrev);
@@ -143,7 +143,7 @@ class Slider extends AppModule {
 	 */
 	unbindEvents() {
 		// Global Events
-		App.Vent.off(App.Events.resize);
+		App.Vent.off(App.EVENTS.resize);
 
 		// Local Events
 		this.$el.off(App.clickHandler);

@@ -26,7 +26,7 @@ class FormAjax extends AppModule {
 			submitOnLoad: false,
 			submitOnChange: true,
 			showLoader: false, // loading class
-			eventName: App.Events.formComplete
+			eventName: App.EVENTS.formComplete
 		};
 
 		super(obj, options);
@@ -58,7 +58,7 @@ class FormAjax extends AppModule {
 		/**
 		 * Reset filters on reset event
 		 */
-		App.Vent.on(App.Events.formReset, reset);
+		App.Vent.on(App.EVENTS.formReset, reset);
 
 		/**
 		 * If submitOnChange is true
@@ -69,7 +69,7 @@ class FormAjax extends AppModule {
 		 */
 		if (this.options.submitOnChange) {
 			this.$el.on('blur change', this.fields, fetchData);
-			App.Vent.on(App.Events.selectChanged, fetchData);
+			App.Vent.on(App.EVENTS.selectChanged, fetchData);
 		}
 	}
 

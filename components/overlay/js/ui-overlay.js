@@ -36,7 +36,7 @@ App.ui.Overlay = App.ComponentView.extend({
 	bindEvents: function() {
 		var that = this;
 
-		that.listenTo(App.Vent, App.Events.resize, setTimeout(function() {
+		that.listenTo(App.Vent, App.EVENTS.resize, setTimeout(function() {
 			that.render();
 		}), 300);
 	},

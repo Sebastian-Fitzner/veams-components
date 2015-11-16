@@ -36,6 +36,11 @@ Global Styles
 		font-weight: 700;
 	}
 
+	em,
+	i {
+		font-style: italic;
+	}
+
 	/*
 	Lists
 	----------------------------- */
@@ -53,12 +58,10 @@ Global Styles
 	Tables
 	----------------------------- */
 	table {
-	}
-
-	table th {
-	}
-
-	table td {
+		th {
+		}
+		td {
+		}
 	}
 
 	/*

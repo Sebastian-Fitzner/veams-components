@@ -38,7 +38,7 @@ class ElementsView extends App.ComponentView {
 	}
 
 	bindEvents() {
-		App.Vent.on(App.Events.paginationRendered, this.handleData.bind(this))
+		App.Vent.on(App.EVENTS.paginationRendered, this.handleData.bind(this))
 	}
 
 	// Renders the view's template to the UI

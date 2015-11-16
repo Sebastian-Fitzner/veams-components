@@ -49,8 +49,8 @@ class CtaHandler extends AppModule {
 		let onClick = this.onClick.bind(this);
 
 		// Global events
-		App.Vent.on(App.Events.btnClose, close);
-		App.Vent.on(App.Events.btnOpen, open);
+		App.Vent.on(App.EVENTS.btnClose, close);
+		App.Vent.on(App.EVENTS.btnOpen, open);
 
 		// Local events
 		this.$el.on(this.options.handler, onClick);
@@ -62,9 +62,9 @@ class CtaHandler extends AppModule {
 	 * Trigger events so that each button can listen to that and react by option singleOpen
 	 */
 	handleClasses() {
-		this.$el.is('.' + this.options.activeClass) ? App.Vent.trigger(App.Events.btnClose, {
+		this.$el.is('.' + this.options.activeClass) ? App.Vent.trigger(App.EVENTS.btnClose, {
 			'el': this.$el
-		}) : App.Vent.trigger(App.Events.btnOpen, {
+		}) : App.Vent.trigger(App.EVENTS.btnOpen, {
 			'el': this.$el
 		});
 	}

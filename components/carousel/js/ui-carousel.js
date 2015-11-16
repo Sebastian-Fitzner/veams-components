@@ -212,7 +212,7 @@ App.ui.Carousel = App.ComponentView.extend({
 			that.changeSlide(opts);
 		});
 
-		this.listenTo(App.Vent, App.Events.resize, setTimeout(function() {
+		this.listenTo(App.Vent, App.EVENTS.resize, setTimeout(function() {
 			that.getAndSetSlideDimensions();
 		}, 300));
 	},

@@ -44,11 +44,11 @@ class EqualHeight extends AppModule {
 		App.Vent.on(App.EVENTS.resize, render);
 	}
 
-	_resetStyles(el) {
+	resetStyles(el) {
 		el.removeAttr('style');
 	}
 
-	_setLastRowClass(element) {
+	setLastRowClass(element) {
 		Helpers.forEach($(element), (el) => {
 			$(el).addClass(this.options.lastRowClass);
 		});
@@ -62,7 +62,7 @@ class EqualHeight extends AppModule {
 		Helpers.forEach(this.childElements, (i, element) => {
 			let el = $(element);
 
-			this._resetStyles(el);
+			this.resetStyles(el);
 
 			if (el.offsetTop === firstElTopPos) {
 				posArray.push(el);
@@ -89,7 +89,7 @@ class EqualHeight extends AppModule {
 			this.setHeight(rows[i], height, padding);
 
 			if (i > 0 && i === rows.length - 1) {
-				this._setLastRowClass(rows[i]);
+				this.setLastRowClass(rows[i]);
 			}
 		}
 	}

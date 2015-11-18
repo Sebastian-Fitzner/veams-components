@@ -54,16 +54,15 @@ class EqualHeight extends AppModule {
 		});
 	}
 
-	buildRow(el) {
-		var that = this;
-		var rows = [];
-		var posArray = [];
-		var firstElTopPos = this.firstChild.offsetTop;
+	buildRow() {
+		let rows = [];
+		let posArray = [];
+		let firstElTopPos = this.firstChild.offsetTop;
 
-		Helpers.forEach(el, (i, element) => {
-			var el = $(element);
+		Helpers.forEach(this.childElements, (i, element) => {
+			let el = $(element);
 
-			that._resetStyles(el);
+			this._resetStyles(el);
 
 			if (el.offsetTop === firstElTopPos) {
 				posArray.push(el);
@@ -81,23 +80,22 @@ class EqualHeight extends AppModule {
 	}
 
 	defineRowHeight(rows) {
-		var that = this,
-			i = 0,
-			padding = ~~this.options.addPadding;
+		let i = 0;
+		let padding = ~~this.options.addPadding;
 
 		for (i; i < rows.length; i++) {
-			var height = that.getRowHeight(rows[i]);
+			let height = this.getRowHeight(rows[i]);
 
-			that.setHeight(rows[i], height, padding);
+			this.setHeight(rows[i], height, padding);
 
 			if (i > 0 && i === rows.length - 1) {
-				that._setLastRowClass(rows[i]);
+				this._setLastRowClass(rows[i]);
 			}
 		}
 	}
 
 	getRowHeight(elements) {
-		var height = 0;
+		let height = 0;
 
 		Helpers.forEach(elements, (i, el) => {
 			height = Helpers.getOuterHeight(el) > height ? Helpers.getOuterHeight(el) : height;
@@ -107,7 +105,7 @@ class EqualHeight extends AppModule {
 	}
 
 	setHeight(elements, height, padding) {
-		var addPadding = padding || 0;
+		let addPadding = padding || 0;
 
 		Helpers.forEach(elements, (i, el) => {
 			el[0].style.height = height + addPadding + 'px';
@@ -116,7 +114,7 @@ class EqualHeight extends AppModule {
 
 	// Renders the view's template to the UI
 	render() {
-		this.buildRow(this.childElements);
+		this.buildRow();
 
 		setTimeout(() => {
 			App.Vent.trigger(App.EVENTS.equalRender, {

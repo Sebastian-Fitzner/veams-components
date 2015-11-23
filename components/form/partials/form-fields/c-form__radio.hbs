@@ -3,13 +3,13 @@
 		<strong>{{label}}{{#if required}} <abbr title="Required">*</abbr>{{/if}}</strong>
 	</div>
 	<div class="form__col-input">
-		<ul class="form__radio-list {{class}}">
-			{{#each radio}}
+		<ul class="form__radio-list{{#if wrapperClass}} {{wrapperClass}}{{/if}}">
+			{{#each radios}}
 				<li class="form__radio-elements">
-					<input id="{{id}}" name="{{../name}}" type="radio"
+					<input id="{{id}}" name="{{../typeOf}}" type="radio"
 					{{#each dataAttr}} {{attrKey}}="{{{attrValue}}}"{{/each}}
-					{{#if ../required}} required="required"{{/if}}/>
-					<label for="{{id}}">{{{label}}}</label>
+					{{#if ../required}} required="required"{{/if}}{{#if inputClass}} class="{{inputClass}}"{{/if}}/>
+					<label for="{{id}}"{{#if labelClass}} class="{{labelClass}}"{{/if}}>{{{label}}}</label>
 				</li>
 			{{/each}}
 		</ul>

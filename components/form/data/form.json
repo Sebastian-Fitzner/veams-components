@@ -140,6 +140,85 @@
 						}
 					],
 					"pattern": false
+				},
+				{
+					"colClasses": "col-1",
+					"typeOf": "checkbox",
+					"labelClasses": "is-label",
+					"label": "Checkboxes",
+					"required": false,
+					"inputClasses": "is-checkboxes",
+					"checkboxes": [
+						{
+							"wrapperClass": "is-check-wrapper",
+							"inputClass": "is-check",
+							"required": false,
+							"dataAttr": false,
+							"id": "check-01",
+							"label": "Check 01",
+							"labelClasses": "is-label"
+						},
+						{
+							"wrapperClass": "is-check-wrapper",
+							"inputClass": "is-check",
+							"required": false,
+							"dataAttr": false,
+							"id": "check-02",
+							"label": "Check 02",
+							"labelClasses": "is-label"
+						},
+						{
+							"wrapperClass": "is-check-wrapper",
+							"inputClass": "is-check",
+							"required": false,
+							"dataAttr": false,
+							"id": "check-03",
+							"label": "Check 03",
+							"labelClasses": "is-label"
+						}
+					]
+				},
+				{
+					"colClasses": "col-1",
+					"typeOf": "radio",
+					"labelClasses": "is-label",
+					"label": "Radio Buttons",
+					"required": false,
+					"inputClasses": "is-radios",
+					"radios": [
+						{
+							"wrapperClass": "is-radio-wrapper",
+							"inputClass": "is-radio",
+							"required": false,
+							"dataAttr": false,
+							"id": "radio-01",
+							"label": "Radio 01",
+							"labelClasses": "is-label"
+						},
+						{
+							"wrapperClass": "is-radio-wrapper",
+							"inputClass": "is-radio",
+							"required": false,
+							"dataAttr": false,
+							"id": "radio-02",
+							"label": "Radio 02",
+							"labelClasses": "is-label"
+						},
+						{
+							"wrapperClass": "is-radio-wrapper",
+							"inputClass": "is-radio",
+							"required": false,
+							"dataAttr": false,
+							"id": "radio-03",
+							"label": "Radio 03",
+							"labelClasses": "is-label"
+						}
+					]
+				},
+				{
+					"typeOf": "submit",
+					"submitClass": "is-submit",
+					"text": "Send Form"
 				}
 			]
 		}

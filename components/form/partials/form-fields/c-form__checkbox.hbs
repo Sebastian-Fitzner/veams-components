@@ -1,16 +1,15 @@
 <div class="form__checkbox">
-	<div class="form__col-label">
+	<div class="form__col-label"{{#if labelClasses}} class="{{labelClasses}}"{{/if}}>
 		<strong>{{label}}</strong>
 	</div>
 	<div class="form__col-input">
 		{{#each checkboxes}}
-			<div class="{{class}}">
-				<input id="{{id}}" type="{{../type}}" placeholder="{{placeholder}}" value="{{checkboxValue}}"
+			<div class="{{wrapperClass}}">
+				<input id="{{id}}" type="{{../typeOf}}"{{#if checked}} checked{{/if}}
 				{{#each dataAttr}} {{attrKey}}="{{{attrValue}}}"{{/each}}
 				{{#if required}} required="required"{{/if}}
-				{{#if pattern}} pattern="{{{ pattern }}}"{{/if}}
 				{{#if inputClass}} class="{{inputClass}}"{{/if}}/>
-				<label for="{{ id }}">{{{ label }}}{{#if required}} <abbr title="Required">*</abbr>{{/if}}
+				<label for="{{ id }}"{{#if labelClasses}} class="{{labelClasses}}"{{/if}}>{{{ label }}}{{#if required}} <abbr title="Required">*</abbr>{{/if}}
 				</label>
 			</div>
 		{{/each}}

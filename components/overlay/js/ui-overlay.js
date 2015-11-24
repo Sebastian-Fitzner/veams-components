@@ -1,3 +1,7 @@
+/**
+ * Refactor
+ */
+
 var Helpers = require('../../utils/helpers');
 var App = require('../../app');
 var $ = App.$;

@@ -10,7 +10,7 @@ import App from '../../app';
 import AppModule from '../_global/module';
 const $ = App.$;
 
-class CtaHandler extends AppModule {
+class CTA extends AppModule {
 	/**
 	 * Constructor for our class
 	 *
@@ -24,8 +24,7 @@ class CtaHandler extends AppModule {
 		let options = {
 			activeClass: 'is-active',
 			context: false,
-			singleOpen: false,
-			hander: 'click'
+			singleOpen: false
 		};
 		super(obj, options);
 	}
@@ -53,7 +52,7 @@ class CtaHandler extends AppModule {
 		App.Vent.on(App.EVENTS.btnOpen, open);
 
 		// Local events
-		this.$el.on(this.options.handler, onClick);
+		this.$el.on(App.clickHandler, onClick);
 	}
 
 	/**
@@ -123,43 +122,18 @@ class CtaHandler extends AppModule {
 			console.log('You need to inherit from ' + this + ' and override the onClick method or pass a function to ' + this + '.clickHandler !');
 		}
 	}
-}
-
-/**
- * @module CTA
- *
- * @author Sebastian Fitzner
- */
-class CTA extends AppModule {
-	/**
-	 * Constructor for our class
-	 *
-	 * @see module.js
-	 *
-	 * @param {obj} obj - Object which is passed to our class
-	 * @param {obj.el} obj - element which will be saved in this.el
-	 * @param {obj.options} obj - options which will be passed in as JSON object
-	 */
-	constructor(obj) {
-		var options = {};
-		super(obj, options);
-	}
 
 	/**
-	 * Initialize class
+	 * Click handler
+	 *
+	 * This method is public and can be overridden by
+	 * other instances to support a generic button module
 	 */
-	initialize() {
-		this.cta = new CtaHandler({
+	clickHandler() {
+		App.Vent.trigger(this.options.globalEvent, {
 			el: this.$el,
 			options: this.options
 		});
-
-		this.cta.clickHandler = () => {
-			App.Vent.trigger(this.options.globalEvent, {
-				el: this.$el,
-				options: this.options
-			});
-		};
 	}
 }
 

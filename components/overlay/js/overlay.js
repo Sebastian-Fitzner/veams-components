@@ -59,6 +59,9 @@ class Overlay extends AppModule {
 	 * Listen to open and close events
 	 */
 	bindEvents() {
+		let render = this.render.bind(this);
+
+		App.Vent.on(App.EVENTS.overlayPopulate, render);
 	}
 
 	/**
@@ -67,7 +70,7 @@ class Overlay extends AppModule {
 	preRender() {
 		if (this.overlayCreated) return;
 
-		this.body.append(Tpl);
+		this.body.append();
 
 		this.overlayCreated = true;
 	}

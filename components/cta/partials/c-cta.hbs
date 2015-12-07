@@ -9,7 +9,7 @@ component: cta
 	{{#if ctaDownload}} target="_blank"{{/if}}
 	{{#if ctaJsAtom}} data-js-atom="{{ctaJsAtom}}"{{/if}}
 	{{#if ctaJsModule}} data-js-module="cta" data-js-options='{
-	{{#each ctaJsOptions}}"{{ctaKey}}": "{{{ctaValue}}}"{{#if @last}}{{else}}, {{/if}}{{/each}}
+	{{#each ctaJsOptions}}"{{ctaKey}}": {{#unless ctaObject}}"{{/unless}}{{{ctaValue}}}{{#unless ctaObject}}"{{/unless}}{{#if @last}}{{else}}, {{/if}}{{/each}}
 	}'{{/if}}>
 	{{#isnt ctaIcon false}}<span class="cta__icon"></span> {{/isnt}}
 	<span class="cta__content">{{ctaContent}}</span>

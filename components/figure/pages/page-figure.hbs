@@ -1,27 +1,15 @@
----
-title: Figures - Build Better Prototypes with Veams
-menuLink: Figures
----
-
-
-{{#extend "lyt-default"}}
-	{{#content "main"}}
-
-	{{! WrapWith START: Figure }}
-			{{#with figure.simple}}
-				{{> c-figure}}
-			{{/with}}
-		{{! WrapWith END: Figure }}
-		{{! WrapWith START: Figure }}
-			{{#with figure.caption}}
-				{{> c-figure}}
-			{{/with}}
-		{{! WrapWith END: Figure }}
-		{{! WrapWith START: Figure }}
-			{{#with figure.video}}
-				{{> c-figure}}
-			{{/with}}
-	{{! WrapWith END: Figure }}
-
-	{{/content}}
-{{/extend}}
+{{! WrapWith START: Figure }}
+{{#with figure.simple}}
+	{{> c-figure}}
+{{/with}}
+{{! WrapWith END: Figure }}
+{{! WrapWith START: Figure }}
+{{#with figure.caption}}
+	{{> c-figure}}
+{{/with}}
+{{! WrapWith END: Figure }}
+{{! WrapWith START: Figure }}
+{{#with figure.video}}
+	{{> c-figure}}
+{{/with}}
+{{! WrapWith END: Figure }}

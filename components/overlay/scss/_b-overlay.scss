@@ -1,0 +1,104 @@
+/* ===================================================
+BLOCK: OVERLAY
+=================================================== */
+
+/* ---------------------------------------------------
+Global Styles
+--------------------------------------------------- */
+[data-css="b-overlay"] {
+
+	/*
+	Local Vars
+	----------------------- */
+	$color-bg: #000;
+	$color-btn-close: #fff;
+	$speed: $transition-duration / 2;
+
+	/*
+	Standard styles
+	----------------------- */
+	left: 0;
+	position: fixed;
+	opacity: 0;
+	overflow: hidden;
+	top: 0;
+	visibility: hidden;
+	z-index: 9999;
+	height: 0;
+
+	/*
+	Modifiers
+	----------------------- */
+	&.is-open {
+		height: 100%;
+		opacity: 1;
+		transition: opacity $speed $transition-ease-method;
+		visibility: visible;
+		width: 100%;
+	}
+
+	/*
+	Wrapper
+	----------------------- */
+	.overlay__wrapper {
+		height: 100%;
+		width: 100%;
+		position: relative;
+		z-index: 9999;
+		overflow: auto;
+	}
+
+	/*
+	CTA
+	----------------------- */
+	.overlay__close {
+		@include reset-btn();
+
+		height: 20px;
+		position: absolute;
+		right: 20px;
+		top: 20px;
+		width: 20px;
+		z-index: 9997;
+
+		&::after {
+			@include pseudo;
+			@include centering(hv);
+
+			content: 'x';
+			color: $color-btn-close;
+		}
+	}
+
+	/*
+	Content
+	----------------------- */
+	.overlay__content {
+		display: block;
+		height: 100%;
+		margin: auto;
+		position: relative;
+	}
+
+	.overlay__inner {
+		@include centering(hv);
+
+		max-height: 100%;
+		width: auto;
+		margin: 0 auto 0 auto;
+		vertical-align: top;
+	}
+
+	/*
+	Mask
+	----------------------- */
+	.overlay__mask {
+		background: $color-bg;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 9998;
+		width: 100%;
+	}
+}

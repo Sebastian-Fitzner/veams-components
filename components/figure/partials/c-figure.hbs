@@ -1,8 +1,29 @@
----
+{{! ---
 component: figure
----
+============================================
 
-<figure {{#if figureId}}id="{{figureId}}" {{/if}}class="c-figure{{#if figureContextClass}}--{{figureContextClass}}{{else}}--default{{/if}}{{#if figureClasses}} {{figureClasses}}{{/if}}" data-css="c-figure">
+Requirements:
+- c-video
+- c-picture
+
+Options:
+- figureContextClass (String) [default] - Just pass a string
+- figureClasses (String) - Just pass a string for your modifiers
+- figureId (String) - Just pass a string when using an id for the figure
+- pictureUrlStd (String) - @see picture component
+- figureVideo (Object) - @see video component
+- figureCaption (Object) - Contains multiple elements
+- figureCaption.figureCaptionClasses (String) - Modifier classes
+- figureCaption.captionHeadline (String) - Headline
+- figureCaption.captionContent (String) - Content
+
+--- }}
+
+<figure
+	class="c-figure{{#if figureContextClass}}--{{figureContextClass}}{{else}}--default{{/if}}{{#if figureClasses}} {{figureClasses}}{{/if}}"
+	data-css="c-figure"
+	{{#if figureId}} id="{{figureId}}"{{/if}}>
+
 	<div class="figure__wrapper">
 		{{#if pictureUrlStd}}
 			{{> c-picture}}
@@ -10,9 +31,11 @@ component: figure
 			{{> c-video figureVideo}}
 		{{/if}}{{/if}}
 	</div>
+
 	{{#if figureCaption}}
 		<figcaption class="figure__caption{{#if figureCaptionClasses}} {{figureCaptionClasses}}{{/if}}">
 			{{> c-figure__caption figureCaption}}
 		</figcaption>
 	{{/if}}
+
 </figure>

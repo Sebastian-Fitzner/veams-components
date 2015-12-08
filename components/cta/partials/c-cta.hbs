@@ -1,16 +1,38 @@
----
+{{! ---
 component: cta
----
+============================================
+
+Options:
+- ctaButton {Boolean} [a] - Define a button or link as cta
+- ctaContextClass {String} [default] - Just pass a string
+- ctaClass {String} - Modifier classes
+- ctaContent {String} - You should define a title when using an a-tag
+- ctaTarget {String} - You can define a target when using an a-tag
+- ctaJsAtom {String} - You can add this component as data-js-atom
+- ctaJsModule {Boolean} - You can add this component as data-js-module
+- ctaJsOptions {Array} - You can add options to the cta
+- ctaJsOptions.ctaKey {String} - Pass a key as string (i.e. globalEvent)
+- ctaJsOptions.ctaValue {String} - Pass a value as string (i.e. overlay:open)
+- ctaJsOptions.ctaObject {Boolean} [false] - Pass the value as object
+- ctaIcon {Boolean} [true] - Add or remove .cta__icon span
+- ctaContent {String} - You should define a string
+
+Important Notes:
+CTAs can be used everywhere you have to add complex buttons or need a trigger. In example this component will be used in c-slider.hbs!
+
+--- }}
+
 <{{#if ctaButton}}button{{else}}a{{/if}}
+	class="c-cta{{#if ctaContextClass}}--{{ctaContextClass}}{{else}}--default{{/if}}{{#if ctaClass}} {{ctaClass}}{{/if}}"
+	data-css="c-cta"
 	{{#if ctaContent}} title="{{ctaContent}}"{{/if}}
 	{{#if ctaTarget}} href="{{ctaTarget}}"{{/if}}
-		class="c-cta{{#if ctaContextClass}}--{{ctaContextClass}}{{else}}--default{{/if}}{{#if ctaClass}} {{ctaClass}}{{/if}}"
-		data-css="c-cta"
 	{{#if ctaDownload}} target="_blank"{{/if}}
 	{{#if ctaJsAtom}} data-js-atom="{{ctaJsAtom}}"{{/if}}
 	{{#if ctaJsModule}} data-js-module="cta" data-js-options='{
 	{{#each ctaJsOptions}}"{{ctaKey}}": {{#unless ctaObject}}"{{/unless}}{{{ctaValue}}}{{#unless ctaObject}}"{{/unless}}{{#if @last}}{{else}}, {{/if}}{{/each}}
 	}'{{/if}}>
-	{{#isnt ctaIcon false}}<span class="cta__icon"></span> {{/isnt}}
+	{{#isnt ctaIcon false}}
+		<span class="cta__icon"></span> {{/isnt}}
 	<span class="cta__content">{{ctaContent}}</span>
 </{{#if ctaButton}}button{{else}}a{{/if}}>

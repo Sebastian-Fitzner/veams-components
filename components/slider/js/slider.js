@@ -1,4 +1,4 @@
-// Needs some love to support a more gentle way to handle visible items
+// Needs some love ...
 /**
  * Represents a responsive slider which can be used as ribbon.
  * @module slider
@@ -9,6 +9,8 @@
 import App from '../../app';
 import Helpers from '../../utils/helpers';
 import AppModule from '../_global/module';
+import ImageLoader from '../../utils/mixins/imageLoader';
+
 const $ = App.$;
 require('touchswipe')($);
 
@@ -18,9 +20,9 @@ class Slider extends AppModule {
 	 *
 	 * @see module.js
 	 *
-	 * @param {obj} obj - Object which is passed to our class
-	 * @param {obj.el} obj - element which will be saved in this.el
-	 * @param {obj.options} obj - options which will be passed in as JSON object
+	 * @param {Object} obj - Object which is passed to our class
+	 * @param {Object} obj.el - element which will be saved in this.el
+	 * @param {Object} obj.options - options which will be passed in as JSON object
 	 */
 	constructor(obj) {
 		let options = {
@@ -105,8 +107,6 @@ class Slider extends AppModule {
 	 */
 	initialize() {
 		this.index = 0;
-
-		this.slideIndex = 0;
 		this.prev = this.$el.find(this.options.prev);
 		this.next = this.$el.find(this.options.next);
 		this.actions = this.$el.find(this.options.actions);
@@ -118,6 +118,8 @@ class Slider extends AppModule {
 		this.startAtIndex = ~~this.options.startAtIndex;
 
 		this.$el.removeClass(this.options.unresolvedClass);
+
+		super.initialize();
 	}
 
 	/**
@@ -154,11 +156,9 @@ class Slider extends AppModule {
 		this.visibles = this.options.visibleItems[App.currentMedia];
 		this.itemsLength = this.items.length;
 
-		this.unbindEvents();
 		this.handleVisibility();
 		this.removePagination();
 		this.addPagination();
-		this.bindEvents();
 		this.getAndSetDimensions();
 		this.bindSwipes();
 		this.goToItem(this.startAtIndex);
@@ -170,7 +170,7 @@ class Slider extends AppModule {
 	handleVisibility() {
 		if (this.itemsLength === 0) {
 			this.$el.addClass(this.options.hiddenClass);
-			console.log('There is no item we can use in our slider :(');
+			console.warn('There is no item we can use in our slider :(');
 		}
 
 		this.$el.css('max-width', 'none');
@@ -217,11 +217,9 @@ class Slider extends AppModule {
 	 * @param {object} e - Event object.
 	 */
 	showNextElement(e) {
-		if (e) {
-			e.preventDefault();
-		}
+		e.preventDefault();
 
-		this.goToItem(this.index + this.numVisible);
+		this.goToItem(this.index + this.visibles);
 	}
 
 	/**
@@ -230,11 +228,9 @@ class Slider extends AppModule {
 	 * @param {object} e - Event object.
 	 */
 	showPrevElement(e) {
-		if (e) {
-			e.preventDefault();
-		}
+		e.preventDefault();
 
-		this.goToItem(this.index - this.numVisible);
+		this.goToItem(this.index - this.visibles);
 	}
 
 	/**
@@ -243,7 +239,7 @@ class Slider extends AppModule {
 	 * @param {number} index - Index of the pagination element.
 	 */
 	getDirection(index) {
-		return index > this.slideIndex ? "next" : "prev";
+		return index > this.index ? "next" : "prev";
 	}
 
 	/**
@@ -252,13 +248,13 @@ class Slider extends AppModule {
 	bindSwipes() {
 		var _this = this;
 
-		if (this.items.length > this.numVisible) {
+		if (this.items.length > this.visibles) {
 			this.$el.swipe({
 				swipeLeft: function () {
-					_this.goToItem(_this.index + _this.numVisible);
+					_this.goToItem(_this.index + _this.visibles);
 				},
 				swipeRight: function () {
-					_this.goToItem(_this.index - _this.numVisible);
+					_this.goToItem(_this.index - _this.visibles);
 				},
 				threshold: 75,
 				excludedElements: '.isnt-swipeable'
@@ -273,7 +269,7 @@ class Slider extends AppModule {
 	 * @param {number} i - Index number.
 	 */
 	goToItem(i) {
-		var maxIndex = this.items.length - this.numVisible;
+		let maxIndex = this.items.length - this.visibles;
 
 		if (i < 0) {
 			i = maxIndex;
@@ -281,14 +277,16 @@ class Slider extends AppModule {
 			i = 0;
 		}
 
-		this.ribbon.css('left', -i * (this.thumbWidth + this.margin * 2));
+		this.ribbon.css('left', -i * (this.thumbWidth));
 		this.index = i;
 
 		this.items.removeClass(this.options.activeClass);
 		this.paginationItems.removeClass(this.options.activeClass);
 
-		this.items.eq(i).addClass(this.options.activeClass);
-		this.paginationItems.eq(i).addClass(this.options.activeClass);
+		for (let idx = this.index; idx < this.index + this.visibles; idx++) {
+			this.items.eq(idx).addClass(this.options.activeClass);
+			this.paginationItems.eq(idx).addClass(this.options.activeClass);
+		}
 	}
 
 	/**
@@ -296,13 +294,9 @@ class Slider extends AppModule {
 	 */
 	getAndSetDimensions() {
 		this.width = this.$el.outerWidth();
-		this.margin = parseInt(this.items.eq(0).css('margin-right'), 10);
-		this.thumbWidth = this.width / this.numVisible - this.margin;
+		this.thumbWidth = this.width / this.visibles;
 		this.wrapper.css('width', this.width);
 		this.items.css('width', this.thumbWidth);
-
-		// this.thumbHeight = this.getSlideHeight(); // get max height of slides
-		// this.setSlideHeight(this.thumbHeight); // set height to each slide element
 
 		this.ribbon.css({
 			'width': this.getRibbonWidth()
@@ -315,39 +309,13 @@ class Slider extends AppModule {
 	getRibbonWidth() {
 		var width;
 
-		if (this.items.length <= this.numVisible) {
-			width = this.items.length * (this.thumbWidth + this.margin * 2);
+		if (this.items.length <= this.visibles) {
+			width = this.items.length * (this.thumbWidth);
 		} else {
-			width = this.items.length * (this.thumbWidth + this.margin * 2);
+			width = this.items.length * (this.thumbWidth);
 		}
 
 		return width;
-	}
-
-	/**
-	 * Return height of the largest slide.
-	 */
-	getSlideHeight() {
-		var height = 0;
-
-		this.items.each(function (i) {
-			height = $(this).outerHeight(true) > height ? $(this).outerHeight(true) : height;
-		});
-
-		return height;
-	}
-
-	/**
-	 * Set height for slides wrapper and each slide.
-	 * @param {number} height - Height value
-	 */
-	setSlideHeight(height) {
-		this.ribbon.css({
-			'height': height
-		});
-		this.wrapper.css({
-			'height': height
-		});
 	}
 }
 

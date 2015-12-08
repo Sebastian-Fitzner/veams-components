@@ -44,7 +44,6 @@ Global Styles
 		@include float;
 
 		position: relative;
-		margin: 0 1rem;
 		opacity: 0.3;
 		transition: opacity $transition-duration $transition-ease-method;
 		vertical-align: top;
@@ -61,77 +60,73 @@ Global Styles
 	/*
 	Actions
 	----------------------- */
-	.slider__prev,
-	.slider__next {
-	}
+	.slider__actions {
+		@include centering(v);
 
-	.slider__icon {
+		width: 100%;
+		z-index: 100;
 	}
 
 	/*
-	Content
+	Pagination
 	----------------------- */
-	.slider__content {
-		display: block;
-		position: relative;
+	.slider__pagination {
+		@include centering(h);
+
+		bottom: 0;
+	}
+
+	.slider__pagination-list {
+		margin: 0;
+		padding: 0;
+	}
+
+	.slider__pagination-list-item {
+		@extend %hidden-text;
+
+		background-color: #fff;
+		border-radius: 50%;
+		display: inline-block;
+		height: 15px;
+		margin: 0 5px;
+		width: 15px;
+
+		&.is-active {
+			background-color: #000;
+		}
 	}
 }
 
 /* ---------------------------------------------------
-Modifiers
+Context: Default
 --------------------------------------------------- */
-
 .c-slider--default {
+	@extend %float;
+}
+
+/* ===================================================
+CTA :: Attention, please add this to _c-cta.scss
+=================================================== */
+
+.c-cta--slider {
 	/*
 	Local Vars
 	----------------------- */
 	$color-red-cta: #f061b9;
 
 	/*
-	Styles
+	Standard styles
 	----------------------- */
-	@extend %float;
+	@include reset-btn();
 
-	.slider__icon {
-		@extend %hidden;
+	background-color: $color-red-cta;
+	position: absolute;
+
+	&.is-previous {
+		left: 0;
 	}
 
-	.slider__prev,
-	.slider__next {
-		background: none;
-		border: none;
-		height: 27px;
-		position: absolute;
-		width: 15px;
-		top: 50%;
-		margin-top: -13px;
+	&.is-next {
+		right: 0;
 	}
-
-	.slider__prev {
-		left: -30px;
-		background-color: $color-red-cta;
-	}
-
-	.slider__next {
-		right: -30px;
-		background-color: $color-red-cta;
-	}
-
-	.slider__icon {
-		&::after {
-			@extend %pseudo;
-
-			content: '<';
-			display: block;
-		}
-	}
-
-	.slider__content {
-		@extend %float;
-
-		margin-top: 1rem;
-		font-size: 1.5rem;
-		white-space: normal;
-	}
-
 }

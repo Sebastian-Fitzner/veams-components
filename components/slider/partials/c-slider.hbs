@@ -1,12 +1,15 @@
 {{! ---
-component: slider
-REQUIREMENTS: cta
+
+component: Slider
+============================================
+Requirements: cta
+
 --- }}
 
 <div class="c-slider{{#if options.sliderContextClass}}--{{options.sliderContextClass}}{{else}}--default{{/if}}{{#if options.sliderClasses}} {{options.sliderClasses}}{{/if}}" data-css="c-slider" data-js-module="slider"{{#if options.sliderOptions}} data-js-options='{ {{#each options.sliderOptions}}"{{options.sliderKey}}": "{{{options.sliderValue}}}"{{#if @last}}{{else}}, {{/if}}{{/each}} }'{{/if}}>
 
 	<div class="slider__actions" data-js-atom="slider-actions">
-		{{#each options.sliderCta}}
+		{{#each sliderCta}}
 			{{> c-cta }}
 		{{/each}}
 	</div>

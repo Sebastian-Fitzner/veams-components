@@ -1,7 +1,14 @@
-{{! wrapWith START: Slide-Fox }}
-{{#with slide-fox.slide-fox}}
-	{{#wrapWith "slide-fox"}}
-		<a href="#">Link to another page.</a>
-	{{/wrapWith}}
-{{/with}}
-{{! wrapWith END: Slide-Fox}}
+{{! WrapWith START: SlideFox }}
+{{#wrapWith "p-zone" headline="Slide Fox"}}
+	<h2>We need some demo text to see the slide fox in action!</h2>
+	{{#times 20}}
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum explicabo facilis, ipsum itaque necessitatibus nisi nulla ut veniam veritatis voluptate. Blanditiis consectetur, error excepturi exercitationem facilis ipsum labore nobis odit.</p>
+	{{/times}}
+
+	{{#with slide-fox}}
+		{{#wrapWith "c-slide-fox"}}
+			<a href="#">Link to another page.</a>
+		{{/wrapWith}}
+	{{/with}}
+{{/wrapWith}}
+{{! WrapWith END: Slidefox }}

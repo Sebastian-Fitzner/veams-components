@@ -17,9 +17,9 @@ class SlideFox extends AppModule {
 	 *
 	 * @see module.js
 	 *
-	 * @param {obj} obj - Object which is passed to our class
-	 * @param {obj.el} obj - element which will be saved in this.el
-	 * @param {obj.options} obj - options which will be passed in as JSON object
+	 * @param {Object} obj - Object which is passed to our class
+	 * @param {Object} obj.el - element which will be saved in this.el
+	 * @param {Object} obj.options - options which will be passed in as JSON object
 	 */
 	constructor(obj) {
 		let options = {

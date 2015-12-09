@@ -1,0 +1,11 @@
+{{#wrapWith "p-zone" headline="Quote"}}
+	{{#with quote.simple}}
+		{{> c-quote }}
+	{{/with}}
+{{/wrapWith}}
+
+{{#wrapWith "p-zone" headline="Quote with author" bg-color="highlight-1"}}
+	{{#with quote.full}}
+		{{> c-quote }}
+	{{/with}}
+{{/wrapWith}}

@@ -1,3 +1,42 @@
+{{! ---
+component: article
+============================================
+
+Requirements:
+- c-figure (only hbs)
+- c-c-picture (only hbs)
+- c-video (only hbs)
+- c-c-rte (only hbs)
+
+Options:
+- articleContextClass {String} [default] - Just pass a string
+- articleClasses {String} - Modifier classes
+
+- articleHeader {Object} - Object which contains multiple elements
+- articleHeader.articleHeaderClasses {String} - Class for header
+- articleHeader.articleDate {String} - Date string
+- articleHeader.articleDatetime {String} - Date attribute
+- articleHeader.articleH1 {String} - Header H1
+- articleHeader.articleH2 {String} - Header H2
+- articleHeader.articleH3 {String} - Header H3
+- articleHeader.articleIntro {String} - Header Intro
+
+- articleFigure {Object} - Article figure object which contains data for figure (@see c-figure)
+- articleFigure.articleFigureClasses {String} - Classes for figure wrapper div
+
+- articleContentClasses {String} - Classes content div
+- articleSummary {String} - You can define an article as teaser
+- articleLength {Number} - String length for teaser
+- articleMd {Object} - @see c-rte
+
+- articleFooter {Object} - Object which contains multiple elements
+- articleFooter.articleFooterClasses {String} - Class for footer element
+- articleFooter.articleFooterLink {String} - Footer link
+
+Important Notes:
+
+--- }}
+
 ---
 component: article
 ---

@@ -2,11 +2,13 @@
 SLIDE FOX
 =================================================== */
 
-.c-slide-fox {
-	transition: transform $transition-duration / 2 $transition-ease-method;
+[data-css="c-slide-fox"] {
+	transition: transform $transition-duration / 2 $transition-ease-method, opacity $transition-duration / 2 $transition-ease-method;
 	transform: translate3d(0, 100%, 0);
+	opacity: 0;
 
 	&.is-visible {
 		transform: translate3d(0, 0, 0);
+		opacity: 1;
 	}
 }

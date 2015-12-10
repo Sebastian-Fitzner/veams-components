@@ -1,17 +1,3 @@
----
-title: Video - Build Better Prototypes with Veams
-menuLink: Video
----
-
-
-{{#extend "lyt-default"}}
-	{{#content "main"}}
-
-	{{! WrapWith START: Video }}
-			{{#with video.simple}}
-				{{> c-video}}
-			{{/with}}
-		{{! WrapWith END: Video }}
-
-	{{/content}}
-{{/extend}}
+{{#with video}}
+	{{> c-video}}
+{{/with}}

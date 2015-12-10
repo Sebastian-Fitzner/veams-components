@@ -1,6 +1,20 @@
----
+{{! ---
 component: youtube-video
----
+============================================
+
+Requirements:
+
+Options:
+- ytContextClass {String} [default] - Just pass a string
+- ytClasses {String} - Modifier classes
+- ytUrl {String} - Url to youtube video
+- ytWidth {Number} - Width of the video
+- ytHeight {Number} - Height of the video
+
+Important Notes:
+
+--- }}
+
 <div class="c-yt-video{{#if ytContextClass}}--{{ytContextClass}}{{else}}--default{{/if}}{{#if ytClasses}} {{ytClasses}}{{/if}}" data-css="c-yt-video">
 	<iframe src="{{ytUrl}}" frameborder="0" width="{{ytWidth}}" height="{{ytHeight}}"></iframe>
 </div>

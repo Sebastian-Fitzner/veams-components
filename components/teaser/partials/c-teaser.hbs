@@ -1,6 +1,23 @@
----
+{{! ---
 component: teaser
----
+============================================
+
+Requirements:
+- figure (hbs)
+
+Options:
+- teaserContextClass {String} [default] - Just pass a string
+- teaserClasses {String} - Modifier classes
+- teaserLink {Boolean} - Link the full teaser content
+- teaserFigure {Object} - @see figure
+- teaserDate {String} - Date
+- teaserHeadline {String} - Headline
+- teaserContent {String} - Content of teaser which will be displayed in full html
+- teaserFooter {String} - Footer content of teaser which will be displayed in full html
+
+Important Notes:
+
+--- }}
 
 <div class="c-teaser{{#if teaserContextClass}}--{{teaserContextClass}}{{else}}--default{{/if}}{{#if teaserClasses}} {{teaserClasses}}{{/if}}" data-css="c-teaser">
 	{{#if teaserLink}}

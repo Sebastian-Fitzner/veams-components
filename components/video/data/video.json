@@ -1,14 +1,15 @@
 {
 	"video": {
-		"videoPoster": "",
-		"videoOptions": "controls",
-		"videoContextClass": "figure",
+		"videoContextClass": false,
 		"videoClasses": false,
+		"videoPoster": "",
+		"videoOptions": "controls buffer",
 		"videoMp4": "media/reverse.mp4",
 		"videoWebm": "media/reverse.webm",
-		"videoTrack": false,
-		"videoTrackSubtitle": false,
-		"videoTrackLang": false,
-		"videoTrackLabel": false
+		"videoTrack": {
+			"trackSubtitle": false,
+			"trackLang": false,
+			"trackLabel": false
+		}
 	}
 }

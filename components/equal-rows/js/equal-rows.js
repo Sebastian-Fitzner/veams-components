@@ -11,7 +11,7 @@ import ImageLoader from '../../utils/mixins/imageLoader';
 
 const $ = App.$;
 
-class EqualHeight extends AppModule {
+class EqualRows extends AppModule {
 	/**
 	 * Constructor for our class
 	 *
@@ -57,22 +57,21 @@ class EqualHeight extends AppModule {
 	buildRow() {
 		let rows = [];
 		let posArray = [];
-		let firstElTopPos = this.firstChild.offsetTop;
+		let firstElTopPos = this.firstChild[0].offsetTop;
 
 		Helpers.forEach(this.childElements, (i, element) => {
 			let el = $(element);
 
 			this.resetStyles(el);
 
-			if (el.offsetTop === firstElTopPos) {
+			if (el[0].offsetTop === firstElTopPos) {
 				posArray.push(el);
 			} else {
 				rows.push(posArray);
 				posArray = [];
 				posArray.push(el);
-				firstElTopPos = el.offsetTop;
+				firstElTopPos = el[0].offsetTop;
 			}
-
 		});
 
 		rows.push(posArray);
@@ -128,7 +127,7 @@ class EqualHeight extends AppModule {
 	}
 }
 
-EqualHeight.classMixin(ImageLoader);
+EqualRows.classMixin(ImageLoader);
 
 // Returns the View class
-export default EqualHeight;
+export default EqualRows;

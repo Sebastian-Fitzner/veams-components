@@ -1,6 +1,20 @@
----
+{{! ---
 component: picture
----
+============================================
+
+Requirements:
+- (only hbs)
+
+Options:
+- pictureContextClass {String} [default] - Just pass a string
+- pictureClasses {String} - Modifier classes
+- pictureUrlStd {String} - Standard image url
+- pictureAlt {String} - Alt text of the image
+
+Important Notes:
+The breakpoints in this component reflects the breakpoints of your project. Be sure you define enough breakpoints to support all devices.
+
+--- }}
 
 <picture class="c-picture{{#if pictureContextClass}}--{{pictureContextClass}}{{else}}--default{{/if}}{{#if pictureClasses}} {{pictureClasses}}{{/if}}" data-css="c-picture">
 

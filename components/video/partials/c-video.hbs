@@ -1,9 +1,35 @@
----
+{{! ---
 component: video
----
+============================================
 
-<video poster="{{videoPoster}}" {{videoOptions}} tabindex="0" class="c-video{{#if videoContextClass}}--{{videoContextClass}}{{else}}--default{{/if}}{{#if videoClasses}} {{videoClasses}}{{/if}}" data-css="c-video">
-	<source src="{{videoMp4}}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'/>
-	<source src="{{videoWebm}}" type='video/webm; codecs="vp8, vorbis"'/>
-	<track src="{{videoTrack}}" kind="{{videoTrackSubtitle}}" srclang="{{videoTrackLang}}" label="{{videoTrackLabel}}"/>
+Requirements:
+
+Options:
+- videoContextClass {String} [default] - Just pass a string
+- videoClasses {String} - Modifier classes
+- videoPoster {String} - Url to a poster image
+- videoOptions {String} - Apply multiple options as string
+- videoMp4 {String} - Url to mp4 video file
+- videoWebm {String} - Url to webm video file
+- videoTrack {Object} - Object which contains tracking data
+- videoTrack.trackSrc {String} - Url tro track file
+- videoTrack.trackSubtitle {String} - Subtitle
+- videoTrack.trackLang {String} - Language
+- videoTrack.trackLabel {String} - Label
+
+Important Notes:
+
+--- }}
+
+<video class="c-video{{#if videoContextClass}}--{{videoContextClass}}{{else}}--default{{/if}}{{#if videoClasses}} {{videoClasses}}{{/if}}" data-css="c-video"
+       poster="{{videoPoster}}" {{videoOptions}} tabindex="0">
+	{{#if videoMp4}}
+		<source src="{{videoMp4}}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'/>
+	{{/if}}
+	{{#if videoWebm}}
+		<source src="{{videoWebm}}" type='video/webm; codecs="vp8, vorbis"'/>
+	{{/if}}
+	{{#if videoTrack}}
+		<track src="{{trackSrc}}" kind="{{trackSubtitle}}" srclang="{{trackLang}}" label="{{trackLabel}}"/>
+	{{/if}}
 </video>

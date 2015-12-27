@@ -54,8 +54,8 @@ class Toggle extends AppModule {
 	 * Bind all evente
 	 */
 	bindEvents() {
-		App.Vent.on(App.Events.toggleContent, this.toggleContent.bind(this));
-		App.Vent.on(App.Events.resize, Helpers.throttle(() => {
+		App.Vent.on(App.EVENTS.toggleContent, this.toggleContent.bind(this));
+		App.Vent.on(App.EVENTS.resize, Helpers.throttle(() => {
 			this.$el.removeAttr(this.options.dataMaxAttr).removeAttr('style').removeClass(this.options.activeClass);
 			this.toggleSlide();
 		}, 300));

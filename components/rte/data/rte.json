@@ -1,5 +1,28 @@
 {
-	"rteContextClass": "content",
-	"rteClasses": "is-small",
-	"rteMd": "resources/data/markdown/text.md"
+	"single": {
+		"rteContextClass": "content",
+		"rteClasses": "is-small",
+		"rteMd": "resources/templating/data/markdown/text.md"
+	},
+	"full": {
+		"rteContextClass": "content",
+		"rteClasses": "is-full",
+		"rtes": [
+			{
+				"rteMd": "resources/templating/data/markdown/h2.md"
+			},
+			{
+				"rteMd": "resources/templating/data/markdown/text.md"
+			},
+			{
+				"rteMd": "resources/templating/data/markdown/table.md"
+			},
+			{
+				"rteMd": "resources/templating/data/markdown/h3.md"
+			},
+			{
+				"rteMd": "resources/templating/data/markdown/ul.md"
+			}
+		]
+	}
 }

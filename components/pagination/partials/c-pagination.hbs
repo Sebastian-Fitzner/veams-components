@@ -1,12 +1,30 @@
----
+{{! ---
 component: pagination
----
+============================================
+
+Requirements:
+
+Options:
+- pagContext {String} [default] - Just pass a string
+- pagClasses {String} - Modifier classes
+
+- pagButtons {Object} - Object with multiple elements
+- pagButtons.pagDescription {String} - Description for buttons
+- pagButtons.previous {String} - Description for previous button
+- pagButtons.next {String} - Description for next button
+
+- pagCurrent {String} - Description for current element
+- pagMax {Number} - Last number in pagination
+
+Important Notes:
+
+--- }}
 
 <div class="c-pagination{{#if pagContext}}--{{pagContext}}{{else}}--default{{/if}}{{#if pagClasses}} {{pagClasses}}{{/if}}" data-css="c-pagination">
 	<ul class="pagination__list" data-js-atom="search-results-pagination">
 		{{#if pagButtons}}
 			<li class="pagination__list-item is-disabled">
-				<strong class="pagination__list-element is-previous"><span class="is-hidden">{{pagButtons.pageDescription}}</span>{{pagButtons.previous}}
+				<strong class="pagination__list-element is-previous"><span class="is-hidden">{{pagButtons.pagDescription}}</span>{{pagButtons.previous}}
 				</strong>
 			</li>
 		{{/if}}
@@ -29,7 +47,8 @@ component: pagination
 		{{#if pagButtons}}
 			<li class="pagination__list-item">
 				<a class="pagination__list-element is-next" href="#" title="One Page Forward">
-					<span class="is-hidden">{{pagButtons.pageDescription}}</span>{{pagButtons.next}}</a>
+					<span class="is-hidden">{{pagButtons.pagDescription}}</span>{{pagButtons.next}}
+				</a>
 			</li>
 		{{/if}}
 	</ul>

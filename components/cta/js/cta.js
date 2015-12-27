@@ -10,7 +10,7 @@ import App from '../../app';
 import AppModule from '../_global/module';
 const $ = App.$;
 
-class CtaHandler extends AppModule {
+class CTA extends AppModule {
 	/**
 	 * Constructor for our class
 	 *
@@ -43,12 +43,16 @@ class CtaHandler extends AppModule {
 	 * Listen to open and close events
 	 */
 	bindEvents() {
+		let close = this.close.bind(this);
+		let open = this.open.bind(this);
+		let onClick = this.onClick.bind(this);
+
 		// Global events
-		App.Vent.on(App.Events.btnClose, this.close.bind(this));
-		App.Vent.on(App.Events.btnOpen, this.open.bind(this));
+		App.Vent.on(App.EVENTS.btnClose, close);
+		App.Vent.on(App.EVENTS.btnOpen, open);
 
 		// Local events
-		this.$el.on(App.clickHandler, this.onClick.bind(this));
+		this.$el.on(App.clickHandler, onClick);
 	}
 
 	/**
@@ -57,9 +61,9 @@ class CtaHandler extends AppModule {
 	 * Trigger events so that each button can listen to that and react by option singleOpen
 	 */
 	handleClasses() {
-		this.$el.is('.' + this.options.activeClass) ? App.Vent.trigger(App.Events.btnClose, {
+		this.$el.is('.' + this.options.activeClass) ? App.Vent.trigger(App.EVENTS.btnClose, {
 			'el': this.$el
-		}) : App.Vent.trigger(App.Events.btnOpen, {
+		}) : App.Vent.trigger(App.EVENTS.btnOpen, {
 			'el': this.$el
 		});
 	}
@@ -118,43 +122,18 @@ class CtaHandler extends AppModule {
 			console.log('You need to inherit from ' + this + ' and override the onClick method or pass a function to ' + this + '.clickHandler !');
 		}
 	}
-}
-
-/**
- * @module CTA
- *
- * @author Sebastian Fitzner
- */
-class CTA extends AppModule {
-	/**
-	 * Constructor for our class
-	 *
-	 * @see module.js
-	 *
-	 * @param {obj} obj - Object which is passed to our class
-	 * @param {obj.el} obj - element which will be saved in this.el
-	 * @param {obj.options} obj - options which will be passed in as JSON object
-	 */
-	constructor(obj) {
-		var options = {};
-		super(obj, options);
-	}
 
 	/**
-	 * Initialize class
+	 * Click handler
+	 *
+	 * This method is public and can be overridden by
+	 * other instances to support a generic button module
 	 */
-	initialize() {
-		this.cta = new CtaHandler({
+	clickHandler() {
+		App.Vent.trigger(this.options.globalEvent, {
 			el: this.$el,
 			options: this.options
 		});
-
-		this.cta.clickHandler = () => {
-			App.Vent.trigger(this.options.globalEvent, {
-				el: this.$el,
-				options: this.options
-			});
-		};
 	}
 }
 

@@ -1,0 +1,59 @@
+{{#parseJSON '{
+	"ctaButton": true,
+	"ctaContextClass": "overlay",
+	"ctaIcon": false,
+	"ctaContent": "Trigger overlay",
+	"ctaJsModule": true,
+	"ctaJsOptions": [
+		{
+			"ctaKey": "globalEvent",
+			"ctaValue": "gallery:open"
+		},
+		{
+			"ctaKey": "data",
+			"ctaObject": true,
+			"ctaValue": "{\"image\": \"img/temp/pictures/article/pic-01-320.jpg\", \"caption\": \"My custom caption\", \"author\": \"A name\"}"
+		}
+	]
+}'}}
+	{{> c-cta}}
+{{/parseJSON}}
+
+
+{{#mergeData gallery-link.single data='{
+	"figure": {
+		"figureContextClass": "gallery",
+		"pictureAlt": "Simple Picture",
+		"pictureUrlStd": "img/temp/pictures/article/pic-01-769.jpg",
+		"picture320": "img/temp/pictures/article/pic-01-320.jpg",
+		"picture320_2x": "img/temp/pictures/article/pic-01-320_2x.jpg",
+		"picture480": "img/temp/pictures/article/pic-01-480.jpg",
+		"picture480_2x": "img/temp/pictures/article/pic-01-480_2x.jpg",
+		"picture481": "img/temp/pictures/article/pic-01-481.jpg",
+		"picture481_2x": "img/temp/pictures/article/pic-01-481_2x.jpg",
+		"picture768": "img/temp/pictures/article/pic-01-768.jpg",
+		"picture768_2x": "img/temp/pictures/article/pic-01-768_2x.jpg",
+		"picture769": "img/temp/pictures/article/pic-01-769.jpg",
+		"picture769_2x": "img/temp/pictures/article/pic-01-769_2x.jpg"
+	}}'
+}}
+	{{> c-gallery-link}}
+{{/mergeData}}
+
+{{#with gallery-link.multiple}}
+	{{#each data}}
+		{{#mergeData this data='{
+			"figure": {
+				"figureContextClass": "gallery",
+				"pictureAlt": "Simple Picture",
+				"pictureUrlStd": "img/temp/pictures/article/pic-01-320.jpg",
+				"picture768_2x": "img/temp/pictures/article/pic-01-320_2x.jpg",
+				"picture769": "img/temp/pictures/article/pic-01-320.jpg",
+				"picture769_2x": "img/temp/pictures/article/pic-01-320_2x.jpg"
+			}}'
+		}}
+			{{> c-gallery-link}}
+		{{/mergeData}}
+	{{/each}}
+{{/with}}
+

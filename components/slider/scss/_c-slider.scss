@@ -1,0 +1,132 @@
+/* ===================================================
+PROJECT PROGRESS MODULE
+=================================================== */
+
+/* ---------------------------------------------------
+Global Styles
+--------------------------------------------------- */
+
+[data-js-module="slider"] {
+	clear: both;
+	display: block;
+	position: relative;
+
+	/*
+	Unresolved state
+	----------------------- */
+	&.is-unresolved {
+		.slider__list {
+			height: 300px;
+			overflow: hidden;
+		}
+
+		.slider__item {
+			opacity: 0;
+		}
+	}
+
+	/*
+	List
+	----------------------- */
+	.slider__list-wrapper {
+		display: block;
+		position: relative;
+	}
+
+	.slider__list {
+		left: 0;
+		position: relative;
+		transform: translate3d(0, 0, 0);
+		transition: left $transition-duration $transition-ease-method;
+	}
+
+	.slider__item {
+		@include float;
+
+		position: relative;
+		opacity: 0.3;
+		transition: opacity $transition-duration $transition-ease-method;
+		vertical-align: top;
+
+		&.is-active {
+			opacity: 1;
+		}
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+
+	/*
+	Actions
+	----------------------- */
+	.slider__actions {
+		@include centering(v);
+
+		width: 100%;
+		z-index: 100;
+	}
+
+	/*
+	Pagination
+	----------------------- */
+	.slider__pagination {
+		@include centering(h);
+
+		bottom: 0;
+	}
+
+	.slider__pagination-list {
+		margin: 0;
+		padding: 0;
+	}
+
+	.slider__pagination-list-item {
+		@extend %hidden-text;
+
+		background-color: #fff;
+		border-radius: 50%;
+		display: inline-block;
+		height: 15px;
+		margin: 0 5px;
+		width: 15px;
+
+		&.is-active {
+			background-color: #000;
+		}
+	}
+}
+
+/* ---------------------------------------------------
+Context: Default
+--------------------------------------------------- */
+.c-slider--default {
+	@extend %float;
+}
+
+/* ===================================================
+CTA :: Attention, please add this to _c-cta.scss
+=================================================== */
+
+.c-cta--slider {
+	/*
+	Local Vars
+	----------------------- */
+	$color-red-cta: #f061b9;
+
+	/*
+	Standard styles
+	----------------------- */
+	@include reset-btn();
+
+	background-color: $color-red-cta;
+	position: absolute;
+
+	&.is-previous {
+		left: 0;
+	}
+
+	&.is-next {
+		right: 0;
+	}
+}

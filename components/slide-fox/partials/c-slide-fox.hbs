@@ -1,5 +1,24 @@
 {{! ---
 component: slide-fox
+============================================
+
+Requirements:
+
+Options:
+- options {Object} - Contains all objects for slide-fox
+- options.contextClass {String} [default] - Just pass a string
+- options.modifierClasses {String} - Modifier classes
+- options.jsOptions {Array} - JavaScript options object
+- options.jsOptions.jsKey {String} - Key of option
+- options.jsOptions.jsValue {String} - Value of option
+
+Important Notes:
+This component is written as wrapWith template, so you have the possibility to place your custom content.
+
+--- }}
+
+{{! ---
+component: slide-fox
 --- }}
 
 <div class="c-slide-fox{{#if options.contextClass}}--{{options.contextClass}}{{else}}--default{{/if}}{{#if options.modifierClasses}} {{options.modifierClasses}}{{/if}}"

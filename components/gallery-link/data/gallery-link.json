@@ -1,0 +1,46 @@
+{
+	"single": {
+		"contextClass": false,
+		"modifierClasses": false,
+		"jsContent": {
+			"image": "img/temp/pictures/article/pic-01-769.jpg",
+			"caption": "This is my caption",
+			"author": "Fitz Gerald"
+		},
+		"group": false
+	},
+	"multiple": {
+		"data": [
+			{
+				"contextClass": false,
+				"modifierClasses": false,
+				"jsContent": {
+					"image": "img/temp/pictures/article/pic-01-769.jpg",
+					"caption": "This is my caption",
+					"author": "Fitz Gerald"
+				},
+				"group": "group-01"
+			},
+			{
+				"contextClass": false,
+				"modifierClasses": false,
+				"jsContent": {
+					"image": "img/temp/pictures/article/pic-01-769.jpg",
+					"caption": "This is my caption 02",
+					"author": "Fitz Gerald"
+				},
+				"group": "group-01"
+			},
+			{
+				"contextClass": false,
+				"modifierClasses": false,
+				"jsContent": {
+					"image": "img/temp/pictures/article/pic-01-769.jpg",
+					"caption": "This is my caption 03",
+					"author": "Fitz Gerald"
+				},
+				"group": "group-01"
+			}
+		]
+	}
+}

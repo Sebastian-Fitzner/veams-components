@@ -1,0 +1,38 @@
+<div class="c-gallery--default" data-css="c-gallery">
+	<div class="gallery__figure">
+		<img src="{{image}}" alt="" data-js-atom="gallery-figure"/>
+	</div>
+	<div class="gallery__caption-wrapper">
+		{{#if caption}}
+			<strong class="gallery__caption" data-js-atom="gallery-caption">
+				{{caption}}
+			</strong>
+		{{/if}}
+		{{#if author}}
+			<em class="gallery__author" data-js-atom="gallery-author">
+				{{author}}
+			</em>
+		{{/if}}
+	</div>
+
+	{{#if grouped}}
+		<div class="gallery__pager" data-js-atom="gallery-pager">
+			<div class="gallery__pagination-wrapper">
+				<ul class="gallery__list">
+					{{#for 1 length 1}}
+
+						<li class="gallery__list-item{{#is ../idx this}} is-active{{/is}}">
+							<button class="gallery__btn" data-js-atom="gallery-pager-item">{{this}}</button>
+						</li>
+					{{/for}}
+				</ul>
+			</div>
+			<button class="gallery__pagination-prev" data-js-atom="gallery-prev">
+				<span class="gallery__pagination-icon">Previous</span>
+			</button>
+			<button class="gallery__pagination-next" data-js-atom="gallery-next">
+				<span class="gallery__pagination-icon">Next</span>
+			</button>
+		</div>
+	{{/if}}
+</div>

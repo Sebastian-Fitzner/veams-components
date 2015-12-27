@@ -1,0 +1,40 @@
+{{! WrapWith START: Accordion }}
+{{#wrapWith "p-zone" headline="Accordion with Inline Data"}}
+
+{{! WrapWith START: Accordion }}
+	{{#wrapWith "c-accordion"}}
+	{{! WrapWith START: Item }}
+		{{#wrapWith "c-accordion__item"}}
+			Content 1
+		{{/wrapWith}}
+		{{! WrapWith END: Item }}
+		{{! WrapWith START: Item }}
+		{{#wrapWith "c-accordion__item"}}
+			Content 2
+		{{/wrapWith}}
+	{{! WrapWith END: Item }}
+	{{/wrapWith}}
+{{! WrapWith END: Accordion }}
+
+{{/wrapWith}}
+{{! WrapWith END: Accordion }}
+
+{{! WrapWith START: Accordion }}
+{{#wrapWith "p-zone" headline="Accordion with External Data"}}
+
+{{! WrapWith START: Accordion }}
+	{{#wrapWith "c-accordion"}}
+		{{#with accordion}}
+			{{#each data}}
+			{{! WrapWith START: Item }}
+				{{#wrapWith "c-accordion__item"}}
+					{{> c-rte toggleMd}}
+				{{/wrapWith}}
+			{{! WrapWith END: Item }}
+			{{/each}}
+		{{/with}}
+	{{/wrapWith}}
+{{! WrapWith END: Accordion }}
+
+{{/wrapWith}}
+{{! WrapWith END: Accordion }}

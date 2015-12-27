@@ -1,7 +1,20 @@
----
-component: rich-text-editor
----
+{{! ---
+component: rich-text-editor (rte)
+============================================
 
+Requirements:
+
+Options:
+- rteContextClass {String} [default] - Just pass a string
+- rteClasses {String} - Modifier classes
+- rteMd {String} - Path to markdown file (starting at the root directory)
+- rtes {Array} - You can pass an array to this component which consists of multiple rteMD
+- rtes.rteMd {String} - Path to markdown file (starting at the root directory)
+
+Important Notes:
+This component should be used most of the time for content editor sections
+
+--- }}
 <div class="c-rte{{#if rteContextClass}}--{{rteContextClass}}{{else}}--default{{/if}}{{#if rteClasses}} {{rteClasses}}{{/if}}" data-css="c-rte">
 	{{#if rteMd}}
 		{{md rteMd}}

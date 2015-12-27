@@ -1,6 +1,19 @@
----
+{{! ---
 component: quote
----
+============================================
+
+Requirements:
+
+Options:
+- quoteContextClass {String} [default] - Just pass a string
+- quoteClasses {String} - Modifier classes
+- quoteContent {String} - Content text in blockquote
+- quoteAuthor {String} - Author of quote
+
+Important Notes:
+
+--- }}
+
 <div class="c-quote{{#if quoteContextClass}}--{{quoteContextClass}}{{else}}--default{{/if}}{{#if quoteClasses}} {{quoteClasses}}{{/if}}" data-css="c-quote">
 	<blockquote class="quote__content">
 		{{quoteContent}}

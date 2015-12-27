@@ -1,7 +1,20 @@
-{{! --------------------------------------
+{{! ---
 component: form
--------------------------------------- }}
+============================================
 
-<form class="c-form{{#if options.context}}--{{options.context}}{{else}}--default{{/if}}{{#if classes}}{{classes}}{{/if}}" action="{{options.action}}" method="{{options.method}}" data-css="c-form"{{#if options.ajax}} data-js-module="form-ajax" data-js-options='{}'{{/if}}>
+Options:
+- options {Object} - Contains all options
+- options.context {String} - Context class
+- options.classes {String} - Modifier classes
+- options.action {String} - Form action
+- options.method {String} - Form method
+- options.ajax {Boolean} - Init form module
+
+Important Notes:
+This component is written as wrapWith template, so you have the possibility to place your custom content.
+
+--- }}
+
+<form class="c-form{{#if options.context}}--{{options.context}}{{else}}--default{{/if}}{{#if options.classes}} {{options.classes}}{{/if}}" action="{{options.action}}" method="{{options.method}}" data-css="c-form"{{#if options.ajax}} data-js-module="form-ajax" data-js-options='{}'{{/if}}>
 	{{{yield}}}
 </form>

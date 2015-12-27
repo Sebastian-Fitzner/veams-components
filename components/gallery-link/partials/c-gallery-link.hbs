@@ -1,0 +1,26 @@
+{{! ---
+component: gallery-link
+============================================
+
+Requirements:
+- c-figure (only hbs)
+
+Options:
+- contextClass {String} [default] - You can provide a custom context class
+- modifierClasses {String} - You can add modifierClasses (.is-) to the component
+- jsContent {Object} - Required: you have to pass some data to the gallery link
+- jsContent.image {String} - image url
+- jsContent.caption {String} - image caption
+- jsContent.author {String} - image author
+- jsGroup {String} [false] - Optionally you can group multiple links by adding a group
+
+--- }}
+
+{{#unless jsContent}}
+	<h2 style="color: red;">You have to provide some data!</h2>
+{{/unless}}
+
+<a class="c-gallery-link--{{#if contextClass}}{{contextClass}}{{else}}default{{/if}}{{#if modifierClasses}} {{modifierClasses}}{{/if}}" data-css="c-gallery-link" href="{{jsContent.image}}"
+     data-js-atom="gallery-link" data-js-content='{"image": "{{jsContent.image}}", "caption": "{{jsContent.caption}}", "author": "{{jsContent.author}}"}'{{#if group}} data-js-group="{{group}}"{{/if}}>
+	{{> c-figure figure}}
+</a>

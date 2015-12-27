@@ -1,0 +1,40 @@
+{
+	"data": [
+		{
+			"badgeContextClass": false,
+			"badgeClasses": false,
+			"badgeType": "default",
+			"badgeContent": "0"
+		},
+		{
+			"badgeContextClass": false,
+			"badgeClasses": false,
+			"badgeType": "error",
+			"badgeContent": "1"
+		},
+		{
+			"badgeContextClass": false,
+			"badgeClasses": false,
+			"badgeType": "success",
+			"badgeContent": "2"
+		},
+		{
+			"badgeContextClass": false,
+			"badgeClasses": false,
+			"badgeType": "notice",
+			"badgeContent": "3"
+		},
+		{
+			"badgeContextClass": false,
+			"badgeClasses": false,
+			"badgeType": "alert",
+			"badgeContent": "4"
+		},
+		{
+			"badgeContextClass": false,
+			"badgeClasses": false,
+			"badgeType": "success",
+			"badgeContent": "This is my very long success message ..."
+		}
+	]
+}

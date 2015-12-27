@@ -1,0 +1,11 @@
+{
+	"simple": {
+		"quoteContextClass": false,
+		"quoteContent": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus, aliquid assumenda cum deleniti doloribus est facere illo maiores odit quas quos ratione rerum sapiente sequi tenetur totam voluptatibus voluptatum."
+	},
+	"full": {
+		"quoteContextClass": false,
+		"quoteContent": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus, aliquid assumenda cum deleniti doloribus est facere illo maiores odit quas quos ratione rerum sapiente sequi tenetur totam voluptatibus voluptatum.",
+		"quoteAuthor": "Albert Einstein"
+	}
+}

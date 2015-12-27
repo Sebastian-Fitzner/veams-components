@@ -1,0 +1,14 @@
+{{! WrapWith START: Form Wrapper }}
+{{#with form}}
+	{{#wrapWith "c-form"
+	context=options.context
+	ajax=options.ajax
+	classes=options.classes
+	method=options.method
+	}}
+		{{#each fieldsets}}
+			{{> c-form__fieldset }}
+		{{/each}}
+	{{/wrapWith}}
+{{/with}}
+{{! WrapWith END: Form Wrapper }}

@@ -1,0 +1,23 @@
+{{! ---
+component: Badge
+============================================
+
+Requirements:
+
+Options:
+- badgeContextClass {String} [default] - Just pass a string
+- badgeClasses {String} - Modifier classes
+- badgeType {String} - Define your badge type (i.e. alert, error, notice, success)
+- badgeContent {String} - Badge content
+
+Important Notes:
+
+--- }}
+
+{{#unless badgeType}}
+	<h2 style="color: red">Please provide a badge type!</h2>
+{{/unless}}
+
+<div class="c-badge{{#if badgeContextClass}}--{{badgeContextClass}}{{else}}--default{{/if}}{{#if badgeClasses}} {{badgeClasses}}{{/if}}" data-css="c-badge">
+	<span class="badge__content{{#if badgeType}} is-{{badgeType}}{{/if}}">{{badgeContent}}</span>
+</div>

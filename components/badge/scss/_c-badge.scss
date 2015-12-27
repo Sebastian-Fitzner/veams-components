@@ -1,0 +1,65 @@
+/* ===================================================
+Component: Badge
+=================================================== */
+
+/* ---------------------------------------------------
+Helper mixins
+--------------------------------------------------- */
+@mixin badge($color: #999, $font-size: 2.5rem) {
+	background-color: $color;
+	border-radius: $font-size * 5;
+	color: darken($color, 60%);
+	font-size: $font-size;
+	line-height: 1;
+	padding: 1.2rem 2.7rem;
+}
+
+/* ---------------------------------------------------
+Global Styles
+--------------------------------------------------- */
+[data-css="c-badge"] {
+	/*
+	Local variables
+	----------------------- */
+	$alert-color: #fff6bf;
+	$error-color: #fbe3e4;
+	$notice-color: #e5edf8;
+	$success-color: #e6efc2;
+
+	/*
+	Standard styles
+	----------------------- */
+	display: inline-block;
+
+	/*
+	Content classes
+	----------------------- */
+	.badge__content {
+		@include badge();
+	}
+
+	/*
+	Modifiers
+	----------------------- */
+	.is-alert {
+		@include badge($alert-color);
+	}
+
+	.is-error {
+		@include badge($error-color);
+	}
+
+	.is-notice {
+		@include badge($notice-color);
+	}
+
+	.is-success {
+		@include badge($success-color);
+	}
+}
+
+/* ---------------------------------------------------
+Context: Default
+--------------------------------------------------- */
+.c-badge--default {
+}

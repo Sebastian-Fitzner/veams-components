@@ -1,5 +1,5 @@
 {
-	"slider": {
+	"simple": {
 		"options": {
 			"sliderContextClass": "default",
 			"sliderClasses": "is-bg-highlight-1",

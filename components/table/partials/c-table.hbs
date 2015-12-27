@@ -1,6 +1,27 @@
----
+{{! ---
 component: table
----
+============================================
+
+Requirements:
+
+Options:
+- tableContextClass {String} [default] - Just pass a string
+- tableClasses {String} - Modifier classes
+- tableCaption {String} - A caption for the table
+- tableHeader {Object} - An object which contains the headings
+- tableHeader.data {Array} - An array which contains the headings
+- tableHeader.data.thContent {String} - Heading for table
+- tableRow {Object} - An object which contains the table rows
+- tableRow.data {Array} - Rows for table
+- tableRow.data.trClass {String} - Rows class
+- tableRow.data.data {Array} - Columns
+- tableRow.data.data.thTag {Boolean} [false] - Definition of th or td
+- tableRow.data.data.tdClass {String} - Modifier class for td/th
+- tableRow.data.data.tdContent {String} - Column content
+
+Important Notes:
+
+--- }}
 
 <div class="c-table{{#if tableContextClass}}--{{tableContextClass}}{{/if}}{{#if tableClasses}} {{tableClasses}}{{/if}}" data-css="c-table">
 	<table class="table__content">

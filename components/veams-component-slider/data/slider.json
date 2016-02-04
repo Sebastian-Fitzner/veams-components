@@ -1,0 +1,33 @@
+{
+	"simple": {
+		"options": {
+			"sliderContextClass": "default",
+			"sliderClasses": "is-bg-highlight-1",
+			"sliderOptions": [
+				{
+					"sliderKey": "",
+					"sliderValue": ""
+				}
+			]
+		},
+		"sliderCta": [
+			{
+				"ctaButton": true,
+				"ctaContextClass": "slider",
+				"ctaClass": "is-previous",
+				"ctaSpan": true,
+				"ctaContent": "Previous",
+				"ctaJsAtom": "slider-prev"
+			},
+			{
+				"ctaButton": true,
+				"ctaContextClass": "slider",
+				"ctaClass": "is-next",
+				"ctaSpan": true,
+				"ctaContent": "Next",
+				"ctaJsAtom": "slider-next"
+			}
+		],
+		"data": []
+	}
+}

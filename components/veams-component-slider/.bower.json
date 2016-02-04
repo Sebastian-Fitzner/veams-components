@@ -1,0 +1,30 @@
+{
+  "name": "veams-component-slider",
+  "ignore": [
+    ".bowerrc",
+    ".gitignore",
+    "bower.json",
+    "README.md"
+  ],
+  "authors": [
+    {
+      "name": "Sebastian Fitzner",
+      "email": "sebastian@jci-werbeagentur.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Sebastian-Fitzner/veams-component-slider.git"
+  },
+  "homepage": "https://github.com/Sebastian-Fitzner/veams-component-slider",
+  "_release": "8c6eb4c2ab",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "8c6eb4c2ab7789ec26f582db5ff5eb452f3df292"
+  },
+  "_source": "git://github.com/Sebastian-Fitzner/veams-component-slider.git",
+  "_target": "*",
+  "_originalSource": "veams-component-slider",
+  "_direct": true
+}

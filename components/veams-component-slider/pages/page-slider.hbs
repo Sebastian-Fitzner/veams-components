@@ -1,0 +1,22 @@
+{{! wrapWith START: Slider }}
+{{#with slider.simple}}
+	{{#wrapWith "c-slider"}}
+
+		{{#wrapWith "c-slider__item"}}
+			{{#with ../../../figure.simple}}
+				{{> c-figure}}
+			{{/with}}
+		{{/wrapWith}}
+		{{#wrapWith "c-slider__item"}}
+			{{#with ../../../figure.caption}}
+				{{> c-figure}}
+			{{/with}}
+		{{/wrapWith}}
+		{{#wrapWith "c-slider__item"}}
+			{{#with ../../../figure.video}}
+				{{> c-figure}}
+			{{/with}}
+		{{/wrapWith}}
+	{{/wrapWith}}
+{{/with}}
+{{! wrapWith END: Slider}}

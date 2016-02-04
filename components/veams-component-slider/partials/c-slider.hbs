@@ -1,0 +1,39 @@
+{{! ---
+component: Slider
+============================================
+
+Requirements:
+- cta (only hbs)
+
+Options:
+- sliderContextClass {String} [default] - Just pass a string
+- sliderClasses {String} - Modifier classes
+- sliderOptions {Array} - Array with keys and values
+- sliderOptions.sliderKey {String} - Define a key (i.e. unresolvedClass)
+- sliderOptions.sliderValue {String} - Define a value (i.e. is-unresolved)
+
+Important Notes:
+This component is written as wrapWith template, so you have the possibility to place your custom content.
+
+--- }}
+
+<div class="c-slider{{#if options.sliderContextClass}}--{{options.sliderContextClass}}{{else}}--default{{/if}}{{#if options.sliderClasses}} {{options.sliderClasses}}{{/if}}" data-css="c-slider" data-js-module="slider"{{#if options.sliderOptions}} data-js-options='{ {{#each options.sliderOptions}}"{{options.sliderKey}}": "{{{options.sliderValue}}}"{{#if @last}}{{else}}, {{/if}}{{/each}} }'{{/if}}>
+
+	<div class="slider__actions" data-js-atom="slider-actions">
+		{{#each sliderCta}}
+			{{> c-cta }}
+		{{/each}}
+	</div>
+
+	<div class="slider__list-wrapper" data-js-atom="slider-wrapper">
+		<div class="slider__list" data-js-atom="slider-ribbon">
+			{{{yield}}}
+		</div>
+	</div>
+
+	<div class="slider__pagination" data-js-atom="slider-pagination">
+		<ol class="slider__pagination-list" data-js-atom="slider-pagination-list">
+		</ol>
+	</div>
+
+</div>

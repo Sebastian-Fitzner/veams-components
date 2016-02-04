@@ -1,12 +1,11 @@
 {
-	"name": "veams-components",
+	"name": "veams-component-slider",
 	"version": "1.0.0",
 	"ignore": [
 		".bowerrc",
 		".gitignore",
 		"bower.json",
-		"README.md",
-		"components"
+		"README.md"
 	],
 	"authors": [
 		{
@@ -15,10 +14,7 @@
 		}
 	],
 	"repository": {
-		"type": "git",
-		"url": "git://github.com/Sebastian-Fitzner/veams-components.git"
-	},
-	"dependencies": {
-		"veams-component-slider": "*"
+	  "type": "git",
+	  "url": "git://github.com/Sebastian-Fitzner/veams-component-slider.git"
 	}
 }
